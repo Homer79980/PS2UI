@@ -16,27 +16,27 @@ PSD2Unity 用于把 Photoshop UI 设计稿转换为游戏引擎可继续编辑�
 
 | 文件 | 用途 |
 |---|---|
-| `PSD2Unity-Photoshop-1.5.0.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
-| `PSD2Unity-Photoshop-Dev-1.5.0.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
-| `PSD2Unity-Unity-UPM-1.5.0.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
-| `PSD2Unity-Unity-1.5.0.unitypackage` | Unity 传统安装包，适合快速导入 |
-| `PSD2Unity-1.5.0-SHA256.txt` | 安装包完整性校验值 |
+| `PSD2Unity-Photoshop-1.5.1.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
+| `PSD2Unity-Photoshop-Dev-1.5.1.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
+| `PSD2Unity-Unity-UPM-1.5.1.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
+| `PSD2Unity-Unity-1.5.1.unitypackage` | Unity 传统安装包，适合快速导入 |
+| `PSD2Unity-1.5.1-SHA256.txt` | 安装包完整性校验值 |
 
 ## Photoshop 安装
 
 ### 正式安装
 
-1. 下载 `PSD2Unity-Photoshop-1.5.0.ccx`。
+1. 下载 `PSD2Unity-Photoshop-1.5.1.ccx`。
 2. 双击 CCX，通过 Adobe Creative Cloud 完成安装。
 3. 打开 Photoshop。
 4. 从 `增效工具/插件 -> PSD2Unity` 打开面板。
-5. 面板版本应显示 `1.5.0`。
+5. 面板版本应显示 `1.5.1`。
 
 ### 开发加载
 
 CCX 无法安装时：
 
-1. 解压 `PSD2Unity-Photoshop-Dev-1.5.0.zip`。
+1. 解压 `PSD2Unity-Photoshop-Dev-1.5.1.zip`。
 2. 打开 Adobe UXP Developer Tool。
 3. 点击 `Add Plugin`，选择解压目录中的 `manifest.json`。
 4. 点击 `Load` 或 `Reload`。
@@ -49,7 +49,7 @@ CCX 无法安装时：
 
 ### 推荐：UPM 安装
 
-1. 解压 `PSD2Unity-Unity-UPM-1.5.0.zip`。
+1. 解压 `PSD2Unity-Unity-UPM-1.5.1.zip`。
 2. 打开 Unity 的 `Window -> Package Manager`。
 3. 点击左上角 `+`。
 4. 选择 `Add package from disk...`。
@@ -59,7 +59,7 @@ CCX 无法安装时：
 
 ### 传统 unitypackage 安装
 
-1. 下载 `PSD2Unity-Unity-1.5.0.unitypackage`。
+1. 下载 `PSD2Unity-Unity-1.5.1.unitypackage`。
 2. 在 Unity 中选择 `Assets -> Import Package -> Custom Package...`。
 3. 选择安装包并导入全部文件。
 4. 插件会自动补齐 Unity UI、TextMesh Pro 和 Newtonsoft Json 依赖。
@@ -80,7 +80,12 @@ CCX 无法安装时：
 
 如果 Unity 项目暂时没有对应字体或材质，仍然允许先导入图片、层级和 Prefab。文字内容、位置、字号、字距、行距、颜色和效果要求会保存在待绑定清单中；以后新增字体或材质后，可以在插件中扫描、绑定并刷新对应 Prefab，无需重新制作 PSD。
 
-## 1.5.0 主要变化
+## 1.5.1 主要变化
+
+- 用户在整页预览中明确选择字体和 TMP 材质后，可以直接绑定并应用。
+- 材质 Shader 无法完整表达渐变叠加、扩展投影等 Photoshop 效果时，只提示“近似还原”，不再阻止保存。
+- 材质与目标字体图集不兼容时仍会阻止绑定，避免文字空白或图集错乱。
+- 已经人工确认的效果映射会在后续导入中继续生效。
 
 - 不再使用 Photoshop 画板颜色标签选择主画板。
 - 可见画板数量与 Unity 生成 Prefab 数量一致。
@@ -98,11 +103,11 @@ Photoshop 插件会查询本仓库的 Latest Release。发现新版本后，点�
 
 ## 校验安装包
 
-下载 `PSD2Unity-1.5.0-SHA256.txt` 后，可以在 PowerShell 中执行：
+下载 `PSD2Unity-1.5.1-SHA256.txt` 后，可以在 PowerShell 中执行：
 
 ```powershell
-Get-FileHash .\PSD2Unity-Photoshop-1.5.0.ccx -Algorithm SHA256
-Get-FileHash .\PSD2Unity-Unity-UPM-1.5.0.zip -Algorithm SHA256
+Get-FileHash .\PSD2Unity-Photoshop-1.5.1.ccx -Algorithm SHA256
+Get-FileHash .\PSD2Unity-Unity-UPM-1.5.1.zip -Algorithm SHA256
 ```
 
 输出应与校验文件一致。
