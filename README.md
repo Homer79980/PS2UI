@@ -16,27 +16,27 @@ PSD2Unity 用于把 Photoshop UI 设计稿转换为游戏引擎可继续编辑�
 
 | 文件 | 用途 |
 |---|---|
-| `PSD2Unity-Photoshop-1.5.1.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
-| `PSD2Unity-Photoshop-Dev-1.5.1.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
-| `PSD2Unity-Unity-UPM-1.5.1.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
-| `PSD2Unity-Unity-1.5.1.unitypackage` | Unity 传统安装包，适合快速导入 |
-| `PSD2Unity-1.5.1-SHA256.txt` | 安装包完整性校验值 |
+| `PSD2Unity-Photoshop-1.6.0.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
+| `PSD2Unity-Photoshop-Dev-1.6.0.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
+| `PSD2Unity-Unity-UPM-1.6.0.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
+| `PSD2Unity-Unity-1.6.0.unitypackage` | Unity 传统安装包，适合快速导入 |
+| `PSD2Unity-1.6.0-SHA256.txt` | 安装包完整性校验值 |
 
 ## Photoshop 安装
 
 ### 正式安装
 
-1. 下载 `PSD2Unity-Photoshop-1.5.1.ccx`。
+1. 下载 `PSD2Unity-Photoshop-1.6.0.ccx`。
 2. 双击 CCX，通过 Adobe Creative Cloud 完成安装。
 3. 打开 Photoshop。
 4. 从 `增效工具/插件 -> PSD2Unity` 打开面板。
-5. 面板版本应显示 `1.5.1`。
+5. 面板版本应显示 `1.6.0`。
 
 ### 开发加载
 
 CCX 无法安装时：
 
-1. 解压 `PSD2Unity-Photoshop-Dev-1.5.1.zip`。
+1. 解压 `PSD2Unity-Photoshop-Dev-1.6.0.zip`。
 2. 打开 Adobe UXP Developer Tool。
 3. 点击 `Add Plugin`，选择解压目录中的 `manifest.json`。
 4. 点击 `Load` 或 `Reload`。
@@ -49,7 +49,7 @@ CCX 无法安装时：
 
 ### 推荐：UPM 安装
 
-1. 解压 `PSD2Unity-Unity-UPM-1.5.1.zip`。
+1. 解压 `PSD2Unity-Unity-UPM-1.6.0.zip`。
 2. 打开 Unity 的 `Window -> Package Manager`。
 3. 点击左上角 `+`。
 4. 选择 `Add package from disk...`。
@@ -59,7 +59,7 @@ CCX 无法安装时：
 
 ### 传统 unitypackage 安装
 
-1. 下载 `PSD2Unity-Unity-1.5.1.unitypackage`。
+1. 下载 `PSD2Unity-Unity-1.6.0.unitypackage`。
 2. 在 Unity 中选择 `Assets -> Import Package -> Custom Package...`。
 3. 选择安装包并导入全部文件。
 4. 插件会自动补齐 Unity UI、TextMesh Pro 和 Newtonsoft Json 依赖。
@@ -80,7 +80,14 @@ CCX 无法安装时：
 
 如果 Unity 项目暂时没有对应字体或材质，仍然允许先导入图片、层级和 Prefab。文字内容、位置、字号、字距、行距、颜色和效果要求会保存在待绑定清单中；以后新增字体或材质后，可以在插件中扫描、绑定并刷新对应 Prefab，无需重新制作 PSD。
 
-## 1.5.1 主要变化
+## 1.6.0 主要变化
+
+- Photoshop 文字基础色与图层样式“渐变叠加”分别写入通用设计包，基础色不会丢失。
+- Unity 自动还原单层线性、自定义色标、正常混合的文字渐变，不要求项目额外制作渐变 Shader。
+- 渐变按整段 TMP 文字的实际范围计算；更换字体、修改文案或发生换行后会自动重新计算。
+- 不透明渐变决定最终字面颜色；半透明渐变按透明度叠加在 Photoshop 文字基础色上。
+- 复杂渐变完整保留原始参数并提示人工适配，不阻止图片、层级和 Prefab 导入。
+- 渐变数据不包含 Unity 材质、Shader 或资源路径，可供后续其他引擎读取和实现。
 
 - 用户在整页预览中明确选择字体和 TMP 材质后，可以直接绑定并应用。
 - 材质 Shader 无法完整表达渐变叠加、扩展投影等 Photoshop 效果时，只提示“近似还原”，不再阻止保存。
@@ -103,17 +110,18 @@ Photoshop 插件会查询本仓库的 Latest Release。发现新版本后，点�
 
 ## 校验安装包
 
-下载 `PSD2Unity-1.5.1-SHA256.txt` 后，可以在 PowerShell 中执行：
+下载 `PSD2Unity-1.6.0-SHA256.txt` 后，可以在 PowerShell 中执行：
 
 ```powershell
-Get-FileHash .\PSD2Unity-Photoshop-1.5.1.ccx -Algorithm SHA256
-Get-FileHash .\PSD2Unity-Unity-UPM-1.5.1.zip -Algorithm SHA256
+Get-FileHash .\PSD2Unity-Photoshop-1.6.0.ccx -Algorithm SHA256
+Get-FileHash .\PSD2Unity-Unity-UPM-1.6.0.zip -Algorithm SHA256
 ```
 
 输出应与校验文件一致。
 
 ## 已知边界
 
-- Photoshop 渐变叠加、多层描边、复杂投影和多段文字样式，可能需要项目自定义文字 Shader 或人工调整材质。
+- 单层线性自定义色标渐变可自动还原；多层、径向、角度、反射、菱形或特殊混合渐变仍需要引擎适配器或人工材质。
+- TMP 材质的字面颜色建议保持白色，避免材质颜色再次给顶点渐变染色。
 - 插件不会分发字体文件；请确保项目拥有字体使用授权。
 - 旧画板从设计包中删除后，旧 Prefab 只标记为过期，不会自动删除。
