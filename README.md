@@ -16,27 +16,27 @@ PSD2Unity 用于把 Photoshop UI 设计稿转换为游戏引擎可继续编辑�
 
 | 文件 | 用途 |
 |---|---|
-| `PSD2Unity-Photoshop-1.7.2.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
-| `PSD2Unity-Photoshop-Dev-1.7.2.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
-| `PSD2Unity-Unity-UPM-1.7.2.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
-| `PSD2Unity-Unity-1.7.2.unitypackage` | Unity 传统安装包，适合快速导入 |
-| `PSD2Unity-1.7.2-SHA256.txt` | 安装包完整性校验值 |
+| `PSD2Unity-Photoshop-1.7.3.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
+| `PSD2Unity-Photoshop-Dev-1.7.3.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
+| `PSD2Unity-Unity-UPM-1.7.3.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
+| `PSD2Unity-Unity-1.7.3.unitypackage` | Unity 传统安装包，适合快速导入 |
+| `PSD2Unity-1.7.3-SHA256.txt` | 安装包完整性校验值 |
 
 ## Photoshop 安装
 
 ### 正式安装
 
-1. 下载 `PSD2Unity-Photoshop-1.7.2.ccx`。
+1. 下载 `PSD2Unity-Photoshop-1.7.3.ccx`。
 2. 双击 CCX，通过 Adobe Creative Cloud 完成安装。
 3. 打开 Photoshop。
 4. 从 `增效工具/插件 -> PSD2Unity` 打开面板。
-5. 面板版本应显示 `1.7.2`。
+5. 面板版本应显示 `1.7.3`。
 
 ### 开发加载
 
 CCX 无法安装时：
 
-1. 解压 `PSD2Unity-Photoshop-Dev-1.7.2.zip`。
+1. 解压 `PSD2Unity-Photoshop-Dev-1.7.3.zip`。
 2. 打开 Adobe UXP Developer Tool。
 3. 点击 `Add Plugin`，选择解压目录中的 `manifest.json`。
 4. 点击 `Load` 或 `Reload`。
@@ -49,7 +49,7 @@ CCX 无法安装时：
 
 ### 推荐：UPM 安装
 
-1. 解压 `PSD2Unity-Unity-UPM-1.7.2.zip`。
+1. 解压 `PSD2Unity-Unity-UPM-1.7.3.zip`。
 2. 打开 Unity 的 `Window -> Package Manager`。
 3. 点击左上角 `+`。
 4. 选择 `Add package from disk...`。
@@ -59,7 +59,7 @@ CCX 无法安装时：
 
 ### 传统 unitypackage 安装
 
-1. 下载 `PSD2Unity-Unity-1.7.2.unitypackage`。
+1. 下载 `PSD2Unity-Unity-1.7.3.unitypackage`。
 2. 在 Unity 中选择 `Assets -> Import Package -> Custom Package...`。
 3. 选择安装包并导入全部文件。
 4. 插件会自动补齐 Unity UI、TextMesh Pro 和 Newtonsoft Json 依赖。
@@ -91,13 +91,12 @@ CCX 无法安装时：
 
 验证会分别检查整图、固定四边和四角。如果中心内容、边缘高光/阴影/描边、Border、拉伸方向或尺寸不符合规则，该实例保持独立资源，不会被相似图规则强行合并。
 
-## 1.7.2 主要变化
+## 1.7.3 主要变化
 
-- Photoshop 对显式九宫重新在导出阶段把可拉伸中心压成 1px，同时在 Package 中保留原始宽高和布局 Rect。
-- 批量确认同一资源族时自动保证一个母图，其余图层写为实例，修复图层选择变化导致所有节点都成为实例的问题。
-- Unity 对旧版无母图 Package 会选择原始尺寸最大的候选，但仍需通过完整固定边、四角和整图像素校验后才共用 Sprite。
-- 中心或固定边变化、Border 不同、尺寸过小、多个母图时都保持独立。
-- 通用 Package 只记录母图身份、Border 和拉伸意图，不写 Unity 资源路径，可供其他引擎实现同样的安全复用。
+- 修复 Unity 九宫显示尺寸恰好等于 `Left+Right+1`、`Top+Bottom+1` 时被错误改成 Simple 的问题。
+- 精确最小尺寸现在保留 Sliced；只有显示尺寸严格小于 Border 最小尺寸时才安全降级为 Simple。
+- 真实 GF 包验收中 4 个九宫节点全部保持 Sliced，并只引用 2 个设计师明确标记的 Sprite 家族。
+- Photoshop 导出协议、九宫 Border、资源族重建阈值和固定边/四角像素校验均未放宽。
 - 保留多画板多 Prefab、TMP 原生渐变、字体/材质待绑定与人工审核流程。
 
 ## 检查更新
@@ -106,11 +105,11 @@ Photoshop 插件会查询本仓库的 Latest Release。发现新版本后，点�
 
 ## 校验安装包
 
-下载 `PSD2Unity-1.7.2-SHA256.txt` 后，可以在 PowerShell 中执行：
+下载 `PSD2Unity-1.7.3-SHA256.txt` 后，可以在 PowerShell 中执行：
 
 ```powershell
-Get-FileHash .\PSD2Unity-Photoshop-1.7.2.ccx -Algorithm SHA256
-Get-FileHash .\PSD2Unity-Unity-UPM-1.7.2.zip -Algorithm SHA256
+Get-FileHash .\PSD2Unity-Photoshop-1.7.3.ccx -Algorithm SHA256
+Get-FileHash .\PSD2Unity-Unity-UPM-1.7.3.zip -Algorithm SHA256
 ```
 
 输出应与校验文件一致。
