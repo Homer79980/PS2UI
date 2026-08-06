@@ -16,27 +16,27 @@ PSD2Unity 用于把 Photoshop UI 设计稿转换为游戏引擎可继续编辑�
 
 | 文件 | 用途 |
 |---|---|
-| `PSD2Unity-Photoshop-1.7.1.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
-| `PSD2Unity-Photoshop-Dev-1.7.1.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
-| `PSD2Unity-Unity-UPM-1.7.1.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
-| `PSD2Unity-Unity-1.7.1.unitypackage` | Unity 传统安装包，适合快速导入 |
-| `PSD2Unity-1.7.1-SHA256.txt` | 安装包完整性校验值 |
+| `PSD2Unity-Photoshop-1.7.2.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
+| `PSD2Unity-Photoshop-Dev-1.7.2.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
+| `PSD2Unity-Unity-UPM-1.7.2.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
+| `PSD2Unity-Unity-1.7.2.unitypackage` | Unity 传统安装包，适合快速导入 |
+| `PSD2Unity-1.7.2-SHA256.txt` | 安装包完整性校验值 |
 
 ## Photoshop 安装
 
 ### 正式安装
 
-1. 下载 `PSD2Unity-Photoshop-1.7.1.ccx`。
+1. 下载 `PSD2Unity-Photoshop-1.7.2.ccx`。
 2. 双击 CCX，通过 Adobe Creative Cloud 完成安装。
 3. 打开 Photoshop。
 4. 从 `增效工具/插件 -> PSD2Unity` 打开面板。
-5. 面板版本应显示 `1.7.1`。
+5. 面板版本应显示 `1.7.2`。
 
 ### 开发加载
 
 CCX 无法安装时：
 
-1. 解压 `PSD2Unity-Photoshop-Dev-1.7.1.zip`。
+1. 解压 `PSD2Unity-Photoshop-Dev-1.7.2.zip`。
 2. 打开 Adobe UXP Developer Tool。
 3. 点击 `Add Plugin`，选择解压目录中的 `manifest.json`。
 4. 点击 `Load` 或 `Reload`。
@@ -49,7 +49,7 @@ CCX 无法安装时：
 
 ### 推荐：UPM 安装
 
-1. 解压 `PSD2Unity-Unity-UPM-1.7.1.zip`。
+1. 解压 `PSD2Unity-Unity-UPM-1.7.2.zip`。
 2. 打开 Unity 的 `Window -> Package Manager`。
 3. 点击左上角 `+`。
 4. 选择 `Add package from disk...`。
@@ -59,7 +59,7 @@ CCX 无法安装时：
 
 ### 传统 unitypackage 安装
 
-1. 下载 `PSD2Unity-Unity-1.7.1.unitypackage`。
+1. 下载 `PSD2Unity-Unity-1.7.2.unitypackage`。
 2. 在 Unity 中选择 `Assets -> Import Package -> Custom Package...`。
 3. 选择安装包并导入全部文件。
 4. 插件会自动补齐 Unity UI、TextMesh Pro 和 Newtonsoft Json 依赖。
@@ -91,13 +91,12 @@ CCX 无法安装时：
 
 验证会分别检查整图、固定四边和四角。如果中心内容、边缘高光/阴影/描边、Border、拉伸方向或尺寸不符合规则，该实例保持独立资源，不会被相似图规则强行合并。
 
-## 1.7.1 主要变化
+## 1.7.2 主要变化
 
-- 修复 Photoshop 27.8 中“九宫资源族”和“当前图层是母图”整块不显示的问题；面板改用 UXP 兼容的 Flex 布局。
-- Photoshop 九宫面板支持批量写入资源族，并显式指定唯一母图。
-- Photoshop 保留原始 PNG 像素，不再在导出阶段破坏性压缩九宫中心区。
-- Unity 按九宫规则从母图重建每个实例，逐像素校验后才共用 Sprite。
-- 中心或固定边变化、Border 不同、尺寸过小、母图缺失/重复时都保持独立。
+- Photoshop 对显式九宫重新在导出阶段把可拉伸中心压成 1px，同时在 Package 中保留原始宽高和布局 Rect。
+- 批量确认同一资源族时自动保证一个母图，其余图层写为实例，修复图层选择变化导致所有节点都成为实例的问题。
+- Unity 对旧版无母图 Package 会选择原始尺寸最大的候选，但仍需通过完整固定边、四角和整图像素校验后才共用 Sprite。
+- 中心或固定边变化、Border 不同、尺寸过小、多个母图时都保持独立。
 - 通用 Package 只记录母图身份、Border 和拉伸意图，不写 Unity 资源路径，可供其他引擎实现同样的安全复用。
 - 保留多画板多 Prefab、TMP 原生渐变、字体/材质待绑定与人工审核流程。
 
@@ -107,11 +106,11 @@ Photoshop 插件会查询本仓库的 Latest Release。发现新版本后，点�
 
 ## 校验安装包
 
-下载 `PSD2Unity-1.7.1-SHA256.txt` 后，可以在 PowerShell 中执行：
+下载 `PSD2Unity-1.7.2-SHA256.txt` 后，可以在 PowerShell 中执行：
 
 ```powershell
-Get-FileHash .\PSD2Unity-Photoshop-1.7.1.ccx -Algorithm SHA256
-Get-FileHash .\PSD2Unity-Unity-UPM-1.7.1.zip -Algorithm SHA256
+Get-FileHash .\PSD2Unity-Photoshop-1.7.2.ccx -Algorithm SHA256
+Get-FileHash .\PSD2Unity-Unity-UPM-1.7.2.zip -Algorithm SHA256
 ```
 
 输出应与校验文件一致。
@@ -122,5 +121,6 @@ Get-FileHash .\PSD2Unity-Unity-UPM-1.7.1.zip -Algorithm SHA256
 - TMP 材质的字面颜色建议保持白色，避免材质颜色再次给顶点渐变染色。
 - 九宫资源族是设计师的显式声明，插件不会自动猜测没有资源族标记的图片。
 - Photoshop 缩放插值、图层效果或人工修改使实例无法由母图重建时，会保留独立资源。
+- 新 Prefab 合并成功后会共用一个 Sprite；旧版本已经落盘的重复 PNG 不会自动删除，请在资源维护中确认无引用后清理。
 - 插件不会分发字体文件；请确保项目拥有字体使用授权。
 - 旧画板从设计包中删除后，旧 Prefab 只标记为过期，不会自动删除。
