@@ -16,27 +16,27 @@ PSD2Unity 用于把 Photoshop UI 设计稿转换为游戏引擎可继续编辑�
 
 | 文件 | 用途 |
 |---|---|
-| `PSD2Unity-Photoshop-1.9.20.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
-| `PSD2Unity-Photoshop-Dev-1.9.20.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
-| `PSD2Unity-Unity-UPM-1.9.20.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
-| `PSD2Unity-Unity-1.9.20.unitypackage` | Unity 传统安装包，适合快速导入 |
-| `PSD2Unity-1.9.20-SHA256.txt` | 安装包完整性校验值 |
+| `PSD2Unity-Photoshop-1.9.22.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
+| `PSD2Unity-Photoshop-Dev-1.9.22.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
+| `PSD2Unity-Unity-UPM-1.9.22.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
+| `PSD2Unity-Unity-1.9.22.unitypackage` | Unity 传统安装包，适合快速导入 |
+| `PSD2Unity-1.9.22-SHA256.txt` | 安装包完整性校验值 |
 
 ## Photoshop 安装
 
 ### 正式安装
 
-1. 下载 `PSD2Unity-Photoshop-1.9.20.ccx`。
+1. 下载 `PSD2Unity-Photoshop-1.9.22.ccx`。
 2. 双击 CCX，通过 Adobe Creative Cloud 完成安装。
 3. 打开 Photoshop。
 4. 从 `增效工具/插件 -> PSD2Unity` 打开面板。
-5. 面板版本应显示 `1.9.20`。
+5. 面板版本应显示 `1.9.22`。
 
 ### 开发加载
 
 CCX 无法安装时：
 
-1. 解压 `PSD2Unity-Photoshop-Dev-1.9.20.zip`。
+1. 解压 `PSD2Unity-Photoshop-Dev-1.9.22.zip`。
 2. 打开 Adobe UXP Developer Tool。
 3. 点击 `Add Plugin`，选择解压目录中的 `manifest.json`。
 4. 点击 `Load` 或 `Reload`。
@@ -49,7 +49,7 @@ CCX 无法安装时：
 
 ### 推荐：UPM 安装
 
-1. 解压 `PSD2Unity-Unity-UPM-1.9.20.zip`。
+1. 解压 `PSD2Unity-Unity-UPM-1.9.22.zip`。
 2. 打开 Unity 的 `Window -> Package Manager`。
 3. 点击左上角 `+`。
 4. 选择 `Add package from disk...`。
@@ -59,7 +59,7 @@ CCX 无法安装时：
 
 ### 传统 unitypackage 安装
 
-1. 下载 `PSD2Unity-Unity-1.9.20.unitypackage`。
+1. 下载 `PSD2Unity-Unity-1.9.22.unitypackage`。
 2. 在 Unity 中选择 `Assets -> Import Package -> Custom Package...`。
 3. 选择安装包并导入全部文件。
 4. 插件会自动补齐 Unity UI、TextMesh Pro 和 Newtonsoft Json 依赖。
@@ -92,15 +92,14 @@ CCX 无法安装时：
 
 验证会分别检查整图、固定四边和四角。如果中心内容、边缘高光/阴影/描边、Border、拉伸方向或尺寸不符合规则，该实例保持独立资源，不会被相似图规则强行合并。
 
-## 1.9.20 主要变化
+## 1.9.22 主要变化
 
-- 双击智能对象进入内容 PSB 时暂停九宫自动化，返回父文档后仅在母图实际变化时刷新一次资源族。
-- 预览、变换和修复任务按 Photoshop 文档与代次隔离；插件加载、显示、普通选层和面板隐藏保持只读。
-- Ctrl+J、Alt+拖动生成的副本支持 `拷贝`、`拷贝 2`、`copy` 等 Photoshop 本地化后缀，首次登记时获得稳定的新实例 ID。
-- 复制后移动和普通纯移动只保留 Photoshop 原生历史，不再增加 `PSD2Unity 刷新九宫资源族`。
-- 删除当前图层时会取消等待中和已进入 Modal 队列的失效预览，不再读取已删除 Layer 或弹出“命令‘获取’当前不可用”。
-- 实时 View 兼容 Photoshop 27.8 的短只读 Modal，同时不阻塞九宫变换检测。
-- Exporter、CLI 与 Unity 统一资产清单及共享母图 Sprite 几何校验，保留多画板多 Prefab、TMP 渐变和字体/材质待绑定流程。
+- 导出预检为 `拷贝`、`拷贝 2`、`copy` 等本地化九宫副本登记稳定且唯一的新实例 ID，不重建像素、不增加资源族刷新历史。
+- 区分母图样式版本与 Photoshop 实际写入实例的样式摘要，避免宿主规范化动作描述符后误报“图层样式已被修改”。
+- Photoshop 拒绝图层样式写入或清除时立即停止并回滚，不再连续弹出“命令‘设置’当前不可用”。
+- 同族实例共享母图 PNG 时统一使用母图的 Border、效果外扩、压缩契约和 `resourceId`，同时保留实例自身布局源尺寸。
+- 导出失败回执始终匹配请求目标 Package，真实校验错误不再被“10 秒内没有收到完成确认”遮盖。
+- 复制后移动和普通纯移动只保留 Photoshop 原生历史；删除图层时取消失效预览读取。
 
 ## 检查更新
 
@@ -108,11 +107,11 @@ Photoshop 插件会查询本仓库的 Latest Release。发现新版本后，点�
 
 ## 校验安装包
 
-下载 `PSD2Unity-1.9.20-SHA256.txt` 后，可以在 PowerShell 中执行：
+下载 `PSD2Unity-1.9.22-SHA256.txt` 后，可以在 PowerShell 中执行：
 
 ```powershell
-Get-FileHash .\PSD2Unity-Photoshop-1.9.20.ccx -Algorithm SHA256
-Get-FileHash .\PSD2Unity-Unity-UPM-1.9.20.zip -Algorithm SHA256
+Get-FileHash .\PSD2Unity-Photoshop-1.9.22.ccx -Algorithm SHA256
+Get-FileHash .\PSD2Unity-Unity-UPM-1.9.22.zip -Algorithm SHA256
 ```
 
 输出应与校验文件一致。
