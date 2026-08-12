@@ -16,27 +16,27 @@ PS2Unity 用于把 Photoshop UI 设计稿转换为游戏引擎可继续编辑和
 
 | 文件 | 用途 |
 |---|---|
-| `PS2Unity-Photoshop-2.0.1.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
-| `PS2Unity-Photoshop-Dev-2.0.1.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
-| `PS2Unity-Unity-UPM-2.0.1.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
-| `PS2Unity-Unity-2.0.1.unitypackage` | Unity 传统安装包，适合快速导入 |
-| `PS2Unity-2.0.1-SHA256.txt` | 安装包完整性校验值 |
+| `PS2Unity-Photoshop-2.0.3.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
+| `PS2Unity-Photoshop-Dev-2.0.3.zip` | Photoshop 开发加载包，CCX 无法安装时使用 |
+| `PS2Unity-Unity-UPM-2.0.3.zip` | Unity 推荐安装包，适合团队项目和版本管理 |
+| `PS2Unity-Unity-2.0.3.unitypackage` | Unity 传统安装包，适合快速导入 |
+| `PS2Unity-2.0.3-SHA256.txt` | 安装包完整性校验值 |
 
 ## Photoshop 安装
 
 ### 正式安装
 
-1. 下载 `PS2Unity-Photoshop-2.0.1.ccx`。
+1. 下载 `PS2Unity-Photoshop-2.0.3.ccx`。
 2. 双击 CCX，通过 Adobe Creative Cloud 完成安装。
 3. 打开 Photoshop。
 4. 从 `增效工具/插件 -> PS2Unity` 打开面板。
-5. 面板版本应显示 `2.0.1`。
+5. 面板版本应显示 `2.0.3`。
 
 ### 开发加载
 
 CCX 无法安装时：
 
-1. 解压 `PS2Unity-Photoshop-Dev-2.0.1.zip`。
+1. 解压 `PS2Unity-Photoshop-Dev-2.0.3.zip`。
 2. 打开 Adobe UXP Developer Tool。
 3. 点击 `Add Plugin`，选择解压目录中的 `manifest.json`。
 4. 点击 `Load` 或 `Reload`。
@@ -49,7 +49,7 @@ CCX 无法安装时：
 
 ### 推荐：UPM 安装
 
-1. 解压 `PS2Unity-Unity-UPM-2.0.1.zip`。
+1. 解压 `PS2Unity-Unity-UPM-2.0.3.zip`。
 2. 打开 Unity 的 `Window -> Package Manager`。
 3. 点击左上角 `+`。
 4. 选择 `Add package from disk...`。
@@ -59,7 +59,7 @@ CCX 无法安装时：
 
 ### 传统 unitypackage 安装
 
-1. 下载 `PS2Unity-Unity-2.0.1.unitypackage`。
+1. 下载 `PS2Unity-Unity-2.0.3.unitypackage`。
 2. 在 Unity 中选择 `Assets -> Import Package -> Custom Package...`。
 3. 选择安装包并导入全部文件。
 4. 插件会自动补齐 Unity UI、TextMesh Pro 和 Newtonsoft Json 依赖。
@@ -92,6 +92,11 @@ CCX 无法安装时：
 
 验证会分别检查整图、固定四边和四角。如果中心内容、边缘高光/阴影/描边、Border、拉伸方向或尺寸不符合规则，该实例保持独立资源，不会被相似图规则强行合并。
 
+## 2.0.3 主要变化
+
+- 普通图层跳过不必要的 Photoshop 元数据读取。
+- 启动时延后九宫全量检查，后台轮询只处理九宫标记图层，减少 Photoshop 卡顿和“获取当前不可用”弹窗。
+
 ## 2.0.1 主要变化
 
 - AI 命名结果按 Photoshop 画板与组折叠，并支持画布选层与命名列表双向定位。
@@ -107,11 +112,11 @@ Photoshop 插件会查询本仓库的 Latest Release。发现新版本后，点�
 
 ## 校验安装包
 
-下载 `PS2Unity-2.0.1-SHA256.txt` 后，可以在 PowerShell 中执行：
+下载 `PS2Unity-2.0.3-SHA256.txt` 后，可以在 PowerShell 中执行：
 
 ```powershell
-Get-FileHash .\PS2Unity-Photoshop-2.0.1.ccx -Algorithm SHA256
-Get-FileHash .\PS2Unity-Unity-UPM-2.0.1.zip -Algorithm SHA256
+Get-FileHash .\PS2Unity-Photoshop-2.0.3.ccx -Algorithm SHA256
+Get-FileHash .\PS2Unity-Unity-UPM-2.0.3.zip -Algorithm SHA256
 ```
 
 输出应与校验文件一致。
