@@ -10,17 +10,17 @@ PS2UI 是 Photoshop 导出插件，用于把 PSD/PSB 中的 UI 图层、文字�
 
 | 文件 | 用途 |
 |---|---|
-| `PS2UI-Photoshop-2.1.1.ccx` | 正式安装包，Windows/macOS 通用 |
-| `PS2UI-Photoshop-Dev-2.1.1.zip` | Adobe UXP Developer Tool 开发加载包 |
-| `PS2UI-2.1.1-SHA256.txt` | 安装包 SHA-256 校验值 |
+| `PS2UI-Photoshop-2.1.2.ccx` | 正式安装包，Windows/macOS 通用 |
+| `PS2UI-Photoshop-Dev-2.1.2.zip` | Adobe UXP Developer Tool 开发加载包 |
+| `PS2UI-2.1.2-SHA256.txt` | 安装包 SHA-256 校验值 |
 
 ## 正式安装
 
 1. 安装或更新 Adobe Creative Cloud Desktop。
-2. 下载并双击 `PS2UI-Photoshop-2.1.1.ccx`。
+2. 下载并双击 `PS2UI-Photoshop-2.1.2.ccx`。
 3. 在 Creative Cloud 的安装确认窗口中完成安装。
 4. 完全退出并重新启动 Photoshop。
-5. 从 `插件 -> PS2UI` 打开面板，左上角应显示 `v2.1.1`。
+5. 从 `插件 -> PS2UI` 打开面板，左上角应显示 `v2.1.2`。
 
 旧版 PS2Unity Photoshop 插件可以直接覆盖安装。内部插件 ID 仍为 `com.psd2unity.panel`，不会同时出现两个面板，旧 PSD 元数据和 Package Schema 继续兼容。
 
@@ -28,7 +28,7 @@ PS2UI 是 Photoshop 导出插件，用于把 PSD/PSB 中的 UI 图层、文字�
 
 CCX 无法安装或需要调试时：
 
-1. 解压 `PS2UI-Photoshop-Dev-2.1.1.zip`。
+1. 解压 `PS2UI-Photoshop-Dev-2.1.2.zip`。
 2. 打开 Adobe UXP Developer Tool。
 3. 点击 `Add Plugin`，选择解压目录中的 `manifest.json`。
 4. 点击 `Load` 或 `Reload`。
@@ -45,6 +45,15 @@ CCX 无法安装或需要调试时：
 7. 在引擎插件中选择 Package 根目录，不要选择 `sprites` 子目录。
 
 PS2UI 会去除外围透明像素，但不会裁掉任何原本存在的非透明像素；Package 内解码像素完全相同且九宫契约兼容的资源会先归并为一份物理图片。
+
+## AI 命名
+
+- 每个图层只读取一次视觉摘要，预览保持原始宽高比，并将最长边归一到 256px。
+- 箭头、锁、关闭等小图标使用独立视觉请求；大图最多 4 张一批，并发上限为 4。
+- 粗略轮廓只用于候选分析，不再让未识别图层继承其它图片的语义名称。
+- 模型、视觉内容、图层角色和项目上下文都未变化时，高置信度结果会命中本地缓存；缓存不包含 API Key，也不会随安装包发布。
+- 需要绕过旧结果时点击“重新识别”，插件会忽略缓存并用本次结果覆盖对应条目。
+- AI 结果仍会先显示在命名列表中，确认无误后再写回 Photoshop 图层。
 
 ## 字体说明
 
@@ -74,8 +83,8 @@ PS2UI 启动后会只读查询本仓库的 Latest Release。线上版本高于�
 ## 校验下载
 
 ```powershell
-Get-FileHash .\PS2UI-Photoshop-2.1.1.ccx -Algorithm SHA256
-Get-FileHash .\PS2UI-Photoshop-Dev-2.1.1.zip -Algorithm SHA256
+Get-FileHash .\PS2UI-Photoshop-2.1.2.ccx -Algorithm SHA256
+Get-FileHash .\PS2UI-Photoshop-Dev-2.1.2.zip -Algorithm SHA256
 ```
 
-输出应与 `PS2UI-2.1.1-SHA256.txt` 一致。
+输出应与 `PS2UI-2.1.2-SHA256.txt` 一致。
