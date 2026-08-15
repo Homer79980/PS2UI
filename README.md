@@ -1,83 +1,81 @@
-# PS2UI / PS2Unity 安装包
+# PS2UI Releases
 
-`PS2UI` 是 Photoshop 导出插件，用于把 UI 设计稿导出为通用 Package；`Ps2Unity`、`Ps2Godot` 和 `Ps2Cocos` 分别把 Package 导入对应引擎。
+PS2UI 是 Photoshop 导出插件，用于把 PSD/PSB 中的 UI 图层、文字、九宫和画板导出为统一 Package，供 Unity、Godot、Cocos Creator 和 Unreal Engine 导入。
 
-> Photoshop 插件从 2.1.0 起由 PS2Unity 更名为 PS2UI。内部插件 ID、Package Schema 和旧项目元数据保持兼容。
+> 本仓库只发布 Photoshop 插件。引擎端安装包请从文末对应仓库下载。
 
-本仓库发布 PS2UI Photoshop 安装包和 Ps2Unity Unity 安装包。Godot 与 Cocos 安装包分别发布在 [Ps2Godot Releases](https://github.com/Homer79980/Ps2Godot-Releases/releases/latest) 和 [Ps2Cocos Releases](https://github.com/Homer79980/Ps2Cocos-Releases/releases/latest)。
+## 下载
 
-## 下载最新版
-
-打开 [Latest Release](https://github.com/Homer79980/PSD2Unity-Releases/releases/latest) 下载需要的文件：
+[打开最新 Release](https://github.com/Homer79980/PS2UI-Releases/releases/latest)
 
 | 文件 | 用途 |
 |---|---|
-| `PS2UI-Photoshop-2.1.0.ccx` | Photoshop 正式安装包，Windows/macOS 通用 |
-| `PS2UI-Photoshop-Dev-2.1.0.zip` | Photoshop 开发加载包 |
-| `PS2Unity-Unity-UPM-2.1.0.zip` | Unity 推荐安装包 |
-| `PS2Unity-Unity-2.1.0.unitypackage` | Unity 传统安装包 |
-| `PS2UI-2.1.0-SHA256.txt` | 四个安装包的 SHA-256 |
+| `PS2UI-Photoshop-2.1.1.ccx` | 正式安装包，Windows/macOS 通用 |
+| `PS2UI-Photoshop-Dev-2.1.1.zip` | Adobe UXP Developer Tool 开发加载包 |
+| `PS2UI-2.1.1-SHA256.txt` | 安装包 SHA-256 校验值 |
 
-## Photoshop 安装
+## 正式安装
 
-1. 下载并双击 `PS2UI-Photoshop-2.1.0.ccx`。
-2. 通过 Adobe Creative Cloud 完成安装。
-3. 重启 Photoshop。
-4. 从 `增效工具/插件 -> PS2UI` 打开面板。
-5. 面板应显示 `PS2UI v2.1.0`。
+1. 安装或更新 Adobe Creative Cloud Desktop。
+2. 下载并双击 `PS2UI-Photoshop-2.1.1.ccx`。
+3. 在 Creative Cloud 的安装确认窗口中完成安装。
+4. 完全退出并重新启动 Photoshop。
+5. 从 `插件 -> PS2UI` 打开面板，左上角应显示 `v2.1.1`。
 
-CCX 无法安装时，解压 `PS2UI-Photoshop-Dev-2.1.0.zip`，在 Adobe UXP Developer Tool 中选择其中的 `manifest.json` 后点击 `Load`。
+旧版 PS2Unity Photoshop 插件可以直接覆盖安装。内部插件 ID 仍为 `com.psd2unity.panel`，不会同时出现两个面板，旧 PSD 元数据和 Package Schema 继续兼容。
 
-旧版 PS2Unity Photoshop 插件可以直接覆盖安装。因为内部插件 ID 仍是 `com.psd2unity.panel`，不会与 PS2UI 并排安装。
+## 开发加载
 
-## Photoshop 导出
+CCX 无法安装或需要调试时：
 
-1. 打开 PSD/PSB，并在 PS2UI 中设置模块名、图层命名与九宫边界。
-2. 执行导出，选择 Package 输出位置。
-3. 导出目录根部应包含 `layout.json`，图片位于 `sprites`。
-4. 在 Unity、Godot 或 Cocos 导入器中选择 Package 根目录，不要选择 `sprites` 子目录。
+1. 解压 `PS2UI-Photoshop-Dev-2.1.1.zip`。
+2. 打开 Adobe UXP Developer Tool。
+3. 点击 `Add Plugin`，选择解压目录中的 `manifest.json`。
+4. 点击 `Load` 或 `Reload`。
+5. 回到 Photoshop，从 `插件 -> PS2UI` 打开面板。
 
-## Unity 安装
+## 导出操作
 
-支持 Unity 2022.3 LTS。
+1. 在 Photoshop 中打开 PSD/PSB。
+2. 普通可见且有像素的图层可以直接导出，不要求固定命名前缀；隐藏层、空层以及明确以 `#` 或 `Ignore_` 标记的辅助层会跳过。
+3. 需要九宫时选中母图，在 PS2UI 中设置左、上、右、下固定边并确认。实例应通过面板创建或刷新，以保留资源族契约。
+4. 在工具页设置模块名；智能命名是可选步骤，不影响普通图层导出。
+5. 点击导出并选择输出位置。
+6. 成功的 Package 根目录至少包含 `layout.json`、`manifest.json` 和 `sprites/`。
+7. 在引擎插件中选择 Package 根目录，不要选择 `sprites` 子目录。
 
-推荐方式：
+PS2UI 会去除外围透明像素，但不会裁掉任何原本存在的非透明像素；Package 内解码像素完全相同且九宫契约兼容的资源会先归并为一份物理图片。
 
-1. 解压 `PS2Unity-Unity-UPM-2.1.0.zip`。
-2. 打开 `Window -> Package Manager`，点击 `+`。
-3. 选择 `Add package from disk...`。
-4. 选择 `com.psd2unity.uiimport/package.json`。
-5. 编译完成后从 `Tools -> PS2Unity -> 打开工作台` 进入。
+## 字体说明
 
-也可以通过 `Assets -> Import Package -> Custom Package...` 导入 `PS2Unity-Unity-2.1.0.unitypackage`。插件会自动补齐 Unity UI、TextMesh Pro 和 Newtonsoft Json 依赖。
+Package 已携带当前界面使用的字体身份、字号、行高、字距、对齐和文字矩形。日常导入引擎时不需要先额外导入字体 JSON。引擎端没有对应字体时仍会生成完整 UI，并在单一导入流程中提示绑定项目字体或暂用默认字体。
 
-## 基本使用
+高级字体目录只用于跨项目共享稳定字体身份和样式，不包含字体文件，也不是导入前置条件。
 
-1. 在 Photoshop 的 PS2UI 面板导出 Package。
-2. 在 Unity 的 PS2Unity 工作台选择该 Package。
-3. 检查整页预览、图片复用、九宫、字体与材质映射。
-4. 点击 `开始导入` 生成 Prefab。
+## 更新提示
 
-同一张九宫母图的实例会按固定边和角进行验证；只有能够安全重建的实例才会共用 Sprite。普通图片按有效像素紧裁，但不会裁掉任何非透明像素。
+PS2UI 启动后会只读查询本仓库的 Latest Release。线上版本高于本地版本时，“设置”页签和“检查更新”按钮显示红点；插件不会静默下载或执行安装包。网络不可用时不会误报更新。
 
-## 2.1.0 主要变化
+## 升级与卸载
 
-- Photoshop 导出插件的可见名称改为 PS2UI。
-- Photoshop 安装包改为 `PS2UI-Photoshop-*`。
-- 更新检查同时兼容新的 PS2UI 安装包名和旧的 PS2Unity 安装包名。
-- Unity 导入器继续使用 Ps2Unity 名称，Package 协议和旧项目数据无需迁移。
+- 升级：直接安装新版 CCX 后重启 Photoshop。
+- 开发版升级：在 UXP Developer Tool 中重新选择新版目录并点击 `Reload`。
+- 卸载：在 Creative Cloud Desktop 的插件管理中卸载 PS2UI；开发加载则在 UXP Developer Tool 中 `Unload` 并移除条目。
 
-## 检查更新
+## 引擎插件
 
-PS2UI 会查询本仓库的 Latest Release。发现新版本后只显示红点并打开 Release 页面，不会静默下载或执行文件。
+| 引擎 | 发布仓库 |
+|---|---|
+| Unity | [Ps2Unity Releases](https://github.com/Homer79980/Ps2Unity-Releases/releases/latest) |
+| Godot | [Ps2Godot Releases](https://github.com/Homer79980/Ps2Godot-Releases/releases/latest) |
+| Cocos Creator | [Ps2Cocos Releases](https://github.com/Homer79980/Ps2Cocos-Releases/releases/latest) |
+| Unreal Engine | [Ps2Unreal Releases](https://github.com/Homer79980/Ps2Unreal-Releases/releases/latest) |
 
-## 校验安装包
-
-下载 `PS2UI-2.1.0-SHA256.txt` 后执行：
+## 校验下载
 
 ```powershell
-Get-FileHash .\PS2UI-Photoshop-2.1.0.ccx -Algorithm SHA256
-Get-FileHash .\PS2Unity-Unity-UPM-2.1.0.zip -Algorithm SHA256
+Get-FileHash .\PS2UI-Photoshop-2.1.1.ccx -Algorithm SHA256
+Get-FileHash .\PS2UI-Photoshop-Dev-2.1.1.zip -Algorithm SHA256
 ```
 
-输出应与校验文件一致。
+输出应与 `PS2UI-2.1.1-SHA256.txt` 一致。
