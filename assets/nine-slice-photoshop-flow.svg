@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360">
+  <rect width="1400" height="360" fill="#f8fafc"/>
+  <text x="56" y="58" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700" fill="#1f2937">Photoshop 中的九宫操作流程</text>
+  <text x="56" y="91" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17" fill="#64748b">每一步都在 PS2UI 面板完成，导出前先确认预览中的四条边界位置。</text>
+  <g font-family="Microsoft YaHei, Arial, sans-serif">
+    <g transform="translate(56 145)">
+      <rect width="190" height="128" rx="12" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+      <text x="95" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#1e3a8a">1. 准备母图</text>
+      <text x="95" y="70" text-anchor="middle" font-size="15" fill="#334155">完整四角和边框</text>
+      <text x="95" y="96" text-anchor="middle" font-size="15" fill="#334155">不要预先拉伸</text>
+    </g>
+    <path d="M258 209H295" stroke="#64748b" stroke-width="3"/><path d="M289 201L301 209L289 217" fill="none" stroke="#64748b" stroke-width="3"/>
+    <g transform="translate(310 145)">
+      <rect width="190" height="128" rx="12" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+      <text x="95" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#075985">2. 选择图层</text>
+      <text x="95" y="70" text-anchor="middle" font-size="15" fill="#334155">打开九宫页</text>
+      <text x="95" y="96" text-anchor="middle" font-size="15" fill="#334155">点击“刷新预览”</text>
+    </g>
+    <path d="M512 209H549" stroke="#64748b" stroke-width="3"/><path d="M543 201L555 209L543 217" fill="none" stroke="#64748b" stroke-width="3"/>
+    <g transform="translate(564 145)">
+      <rect width="190" height="128" rx="12" fill="#ffedd5" stroke="#fb923c" stroke-width="2"/>
+      <text x="95" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#9a3412">3. 设置 L/T/R/B</text>
+      <text x="95" y="70" text-anchor="middle" font-size="15" fill="#334155">拖参考线或填 px</text>
+      <text x="95" y="96" text-anchor="middle" font-size="15" fill="#334155">检查四角没有被压进中心</text>
+    </g>
+    <path d="M766 209H803" stroke="#64748b" stroke-width="3"/><path d="M797 201L809 209L797 217" fill="none" stroke="#64748b" stroke-width="3"/>
+    <g transform="translate(818 145)">
+      <rect width="190" height="128" rx="12" fill="#dcfce7" stroke="#4ade80" stroke-width="2"/>
+      <text x="95" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#166534">4. 确认母图</text>
+      <text x="95" y="70" text-anchor="middle" font-size="15" fill="#334155">勾选“当前图层是母图”</text>
+      <text x="95" y="96" text-anchor="middle" font-size="15" fill="#334155">填写资源族并点击确认</text>
+    </g>
+    <path d="M1020 209H1057" stroke="#64748b" stroke-width="3"/><path d="M1051 201L1063 209L1051 217" fill="none" stroke="#64748b" stroke-width="3"/>
+    <g transform="translate(1072 145)">
+      <rect width="190" height="128" rx="12" fill="#f3e8ff" stroke="#c084fc" stroke-width="2"/>
+      <text x="95" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#6b21a8">5. 创建 / 导出</text>
+      <text x="95" y="70" text-anchor="middle" font-size="15" fill="#334155">需要多尺寸时创建实例</text>
+      <text x="95" y="96" text-anchor="middle" font-size="15" fill="#334155">工具页导出 Package</text>
+    </g>
+  </g>
+  <text x="700" y="325" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#64748b">只需要一个尺寸时，可以跳过“创建实例”，直接导出母图。</text>
+</svg>

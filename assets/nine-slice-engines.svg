@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430">
+  <rect width="1200" height="430" fill="#f8fafc"/>
+  <text x="50" y="58" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700" fill="#1f2937">导入引擎后的拉伸方式</text>
+  <text x="50" y="91" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17" fill="#64748b">统一原则：修改控件尺寸，不要修改节点 Scale；四角才能保持原始像素。</text>
+  <g font-family="Microsoft YaHei, Arial, sans-serif">
+    <g transform="translate(50 135)">
+      <rect width="250" height="220" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#334155">Unity</text>
+      <text x="24" y="78" font-size="16" fill="#475569">Image → Type = Sliced</text>
+      <text x="24" y="111" font-size="16" fill="#475569">修改 RectTransform 宽高</text>
+      <text x="24" y="144" font-size="16" fill="#475569">Border 由 Package 写入</text>
+      <text x="24" y="188" font-size="15" fill="#b45309">不要用 Transform Scale</text>
+    </g>
+    <g transform="translate(330 135)">
+      <rect width="250" height="220" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#334155">Godot</text>
+      <text x="24" y="78" font-size="16" fill="#475569">NinePatchRect</text>
+      <text x="24" y="111" font-size="16" fill="#475569">修改 Layout Size</text>
+      <text x="24" y="144" font-size="16" fill="#475569">Patch Margin 自动恢复</text>
+      <text x="24" y="188" font-size="15" fill="#b45309">不要改 Node Scale</text>
+    </g>
+    <g transform="translate(610 135)">
+      <rect width="250" height="220" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#334155">Cocos Creator</text>
+      <text x="24" y="78" font-size="16" fill="#475569">Sprite → Type = SLICED</text>
+      <text x="24" y="111" font-size="16" fill="#475569">修改 UITransform 宽高</text>
+      <text x="24" y="144" font-size="16" fill="#475569">Border 写入 SpriteFrame</text>
+      <text x="24" y="188" font-size="15" fill="#b45309">不要用 Scale 拉伸</text>
+    </g>
+    <g transform="translate(890 135)">
+      <rect width="250" height="220" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#334155">Unreal UMG</text>
+      <text x="24" y="78" font-size="16" fill="#475569">Image → Draw As = Box</text>
+      <text x="24" y="111" font-size="16" fill="#475569">修改 Slot / Widget Size</text>
+      <text x="24" y="144" font-size="16" fill="#475569">Margin 自动转换</text>
+      <text x="24" y="188" font-size="15" fill="#b45309">不要用 Render Scale</text>
+    </g>
+  </g>
+</svg>

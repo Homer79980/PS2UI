@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <rect width="900" height="520" fill="#f7f8fa"/>
+  <text x="48" y="58" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700" fill="#1f2937">九宫的核心：固定四角，拉伸中间</text>
+  <text x="48" y="92" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17" fill="#64748b">四条边界把母图分成 9 个区域。蓝色区域保持像素，橙色区域允许拉伸。</text>
+
+  <g transform="translate(88 145)">
+    <rect x="0" y="0" width="480" height="280" rx="10" fill="#ffffff" stroke="#334155" stroke-width="3"/>
+    <path d="M120 0V280M360 0V280M0 90H480M0 210H480" stroke="#ffffff" stroke-width="4"/>
+    <rect x="3" y="3" width="114" height="84" fill="#bfdbfe"/>
+    <rect x="123" y="3" width="234" height="84" fill="#fed7aa"/>
+    <rect x="363" y="3" width="114" height="84" fill="#bfdbfe"/>
+    <rect x="3" y="93" width="114" height="114" fill="#fed7aa"/>
+    <rect x="123" y="93" width="234" height="114" fill="#fb923c"/>
+    <rect x="363" y="93" width="114" height="114" fill="#fed7aa"/>
+    <rect x="3" y="213" width="114" height="64" fill="#bfdbfe"/>
+    <rect x="123" y="213" width="234" height="64" fill="#fed7aa"/>
+    <rect x="363" y="213" width="114" height="64" fill="#bfdbfe"/>
+    <text x="240" y="157" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700" fill="#7c2d12">可拉伸中心</text>
+    <text x="240" y="188" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#7c2d12">纹理 / 纯色 / 空白区域</text>
+    <g font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1e3a8a">
+      <text x="60" y="48" text-anchor="middle">固定角</text>
+      <text x="420" y="48" text-anchor="middle">固定角</text>
+      <text x="60" y="257" text-anchor="middle">固定角</text>
+      <text x="420" y="257" text-anchor="middle">固定角</text>
+    </g>
+  </g>
+
+  <g transform="translate(635 155)" font-family="Microsoft YaHei, Arial, sans-serif">
+    <text x="0" y="0" font-size="18" font-weight="700" fill="#334155">四条边界的含义</text>
+    <text x="0" y="42" font-size="17" fill="#475569">左 L：左侧固定宽度</text>
+    <text x="0" y="78" font-size="17" fill="#475569">上 T：顶部固定高度</text>
+    <text x="0" y="114" font-size="17" fill="#475569">右 R：右侧固定宽度</text>
+    <text x="0" y="150" font-size="17" fill="#475569">下 B：底部固定高度</text>
+    <line x1="0" y1="180" x2="205" y2="180" stroke="#cbd5e1"/>
+    <text x="0" y="216" font-size="16" fill="#b45309">建议优先使用 px</text>
+    <text x="0" y="247" font-size="15" fill="#64748b">例如 32, 32, 32, 32</text>
+    <text x="0" y="285" font-size="15" fill="#64748b">最小宽度 = L + R + 1</text>
+    <text x="0" y="314" font-size="15" fill="#64748b">最小高度 = T + B + 1</text>
+  </g>
+
+  <rect x="48" y="466" width="804" height="30" rx="6" fill="#e0f2fe"/>
+  <text x="450" y="487" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#075985">不要把已经拉伸过的实例当作母图；母图应保留完整四角和边框。</text>
+</svg>
