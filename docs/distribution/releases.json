@@ -100,14 +100,16 @@
       "id": "ps-link",
       "name": "PS-Link",
       "kind": "photoshop-tool",
-      "version": "0.0.1",
-      "supportedHosts": ["Photoshop · Android 7.0+"],
+      "version": "0.1.0",
+      "supportedHosts": ["Windows 10/11 · Photoshop 2023+ · Android 7.0+"],
+      "description": "把 Photoshop 当前画板通过局域网同步到 Android 手机，支持多画板跟随、保存同步和自动预览。",
       "releaseRepository": "Homer79980/PS-Link-Releases",
-      "releaseTag": "v0.0.1",
-      "releaseUrl": "https://github.com/Homer79980/PS-Link-Releases/releases/tag/v0.0.1",
+      "releaseTag": "v0.1.0",
+      "releaseUrl": "https://github.com/Homer79980/PS-Link-Releases/releases/tag/v0.1.0",
       "assets": [
-        "PS-Link-Photoshop-Plugin-0.0.1.ccx",
-        "PS-Link-Android-0.0.1.apk"
+        "PS-Link-Setup-0.1.0.exe",
+        "PS-Link-Photoshop-Plugin-0.1.0.ccx",
+        "PS-Link-Android-0.1.0.apk"
       ]
     },
     {
