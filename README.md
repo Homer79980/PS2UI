@@ -1,18 +1,61 @@
-# PS2UI Releases
+# PS2UI 产品中心
 
-PS2UI 是 Photoshop 导出插件，用于把 PSD/PSB 中的 UI 图层、文字、九宫和画板导出为统一 Package，供 Unity、Godot、Cocos Creator 和 Unreal Engine 导入。
+PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成设计和九宫标记，再把同一份 Package 导入 Unity、Godot、Cocos Creator 或 Unreal Engine。这个仓库统一提供安装包、版本说明、教程和校验文件；源码仓库保持私有，以便维护共享协议和测试。
 
-> 本仓库只发布 Photoshop 插件。引擎端安装包请从文末对应仓库下载。
+## 快速开始
 
-## 下载
+1. 安装 Photoshop 端 [PS2UI](https://github.com/Homer79980/PS2UI/releases/latest) 插件。
+2. 在 Photoshop 中打开 PSD/PSB，设置九宫后导出 Package。
+3. 选择目标引擎的安装包，安装到对应项目。
+4. 从引擎插件菜单选择“导入 PS2UI 导出包”，选择包含 `layout.json` 和 `sprites` 的 Package 根目录。
+5. 打开生成的场景、Prefab 或 Widget，按引擎文档调整尺寸。九宫只修改控件尺寸，不要用 Scale 拉伸。
 
-[打开最新 Release](https://github.com/Homer79980/PS2UI-Releases/releases/latest)
+## 当前版本
 
-| 文件 | 用途 |
-|---|---|
-| `PS2UI-Photoshop-2.1.2.ccx` | 正式安装包，Windows/macOS 通用 |
-| `PS2UI-Photoshop-Dev-2.1.2.zip` | Adobe UXP Developer Tool 开发加载包 |
-| `PS2UI-2.1.2-SHA256.txt` | 安装包 SHA-256 校验值 |
+| 产品 | 版本 | 支持环境 | 下载 |
+|---|---:|---|---|
+| PS2UI Photoshop 导出器 | 2.1.2 | Photoshop 2023+ | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
+| Ps2Unity | 2.1.1 | Unity 2022.3 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
+| Ps2Godot | 0.1.1 | Godot 4.6.2 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
+| Ps2Cocos | 0.1.1 | Cocos Creator 3.8.5-3.8.8 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
+| Ps2Unreal | 0.1.1 | Unreal Engine 5.7/5.8 Win64 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
+| PS2UI Engine Installer | 0.1.1 | Windows 10/11 x64 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
+
+> 当前整合包的公开下载和教程都在本仓库。旧的引擎 Release 仓库继续保留，用于兼容历史链接；新项目请从这里下载。
+
+## 安装方式
+
+### 推荐：统一安装器（Windows）
+
+下载 `PS2UI-Engine-Installer-0.1.1.exe`，双击运行。安装器支持 Unity、Godot、Cocos Creator 和 Unreal Engine 多选，能够自动识别项目，也允许手动选择项目目录。安装前请关闭对应编辑器；安装器会备份旧插件、校验目标目录并在失败时回滚。
+
+安装完成后，安装器会按所选引擎显示启用和首次导入步骤。安装器只安装项目级插件，不修改项目业务资源，也不会联网上传项目路径。
+
+### Photoshop 插件
+
+1. 下载 `PS2UI-Photoshop-2.1.2.ccx`。
+2. 双击并在 Creative Cloud 确认安装。
+3. 重启 Photoshop，从“插件 -> PS2UI”打开面板。
+4. 面板左上角应显示 `v2.1.2`。
+
+Photoshop 端支持 Windows/macOS 上的 Photoshop 2023（24.0）及以上版本。Photoshop 2022 及更早版本暂不支持当前 UXP 面板。
+
+### 手动安装
+
+如果不使用安装器，可从同一个 Release 下载对应 ZIP，分别放到：
+
+```text
+Unity：项目/Packages/com.psd2unity.uiimport
+Godot：项目/addons/ps2godot
+Cocos：项目/extensions/ps2cocos
+Unreal：项目/Plugins/Ps2Unreal
+```
+
+手动安装后重新打开编辑器，并在插件管理器中启用插件。Unreal 必须选择与 UE 小版本匹配的 Win64 包。
+
+## 导入和九宫教程
+
+完整的 Photoshop 九宫设置、Package 导出、资源复用、字体映射和四个引擎的拉伸方式见下方教程。第一次使用时，建议先完成“准备母图 -> 设置 L/T/R/B -> 导出 Package -> 引擎导入 -> 修改控件尺寸”的完整流程。
 
 ## 正式安装
 
@@ -202,12 +245,30 @@ PS2UI 启动后会只读查询本仓库的 Latest Release。线上版本高于�
 
 ## 引擎插件
 
-| 引擎 | 发布仓库 |
-|---|---|
-| Unity | [Ps2Unity Releases](https://github.com/Homer79980/Ps2Unity-Releases/releases/latest) |
-| Godot | [Ps2Godot Releases](https://github.com/Homer79980/Ps2Godot-Releases/releases/latest) |
-| Cocos Creator | [Ps2Cocos Releases](https://github.com/Homer79980/Ps2Cocos-Releases/releases/latest) |
-| Unreal Engine | [Ps2Unreal Releases](https://github.com/Homer79980/Ps2Unreal-Releases/releases/latest) |
+| 引擎 | 安装入口 | 首次使用 |
+|---|---|---|
+| Unity | [下载整合包](https://github.com/Homer79980/PS2UI/releases/latest) | `Window -> Package Manager` 确认 Ps2Unity，然后导入 Package |
+| Godot | [下载整合包](https://github.com/Homer79980/PS2UI/releases/latest) | `Project -> Project Settings -> Plugins` 启用 Ps2Godot |
+| Cocos Creator | [下载整合包](https://github.com/Homer79980/PS2UI/releases/latest) | `Extension -> Extension Manager` 启用 Ps2Cocos |
+| Unreal Engine | [下载整合包](https://github.com/Homer79980/PS2UI/releases/latest) | `Edit -> Plugins` 启用 Ps2Unreal，重启编辑器 |
+
+## 字体和资源复用
+
+导出 Package 时会携带当前文字的字体身份、字号、行距、字距和文本矩形。引擎导入时会优先匹配项目已有字体；没有字体 JSON 或没有绑定字体时，仍会生成完整 UI，并使用默认字体，不会丢失位置和尺寸参数。
+
+项目中已有与 Package 像素完全相同的图片时，引擎会优先复用已有资源。不同尺寸、镜像或九宫边界不兼容的资源不会静默替换；需要人工确认时，插件会给出提示。
+
+## 故障排查
+
+- 菜单找不到：关闭编辑器，确认插件目录没有多嵌套一层，再重新打开项目。
+- 导入没有反应：选择 Package 根目录，不要选择 `sprites` 子目录；大型项目首次导入可能需要扫描资源。
+- 九宫变形：检查边界 L/T/R/B 和引擎组件类型，修改宽高，不要修改 Scale。
+- 字体不一致：在引擎插件的字体管理入口绑定项目字体后重新导入；默认字体只能保证结构参数，不保证字形宽度完全相同。
+- 安装器提示已安装：先关闭对应编辑器，再选择“修复”；安装器不会覆盖项目自定义的旧版插件。
+
+## 源码和协议
+
+共享源码、Package Schema、字体协议和跨引擎测试维护在私有仓库 [PS2UI-Source](https://github.com/Homer79980/PS2UI-Source)。公开仓库只提供可安装产物和面向使用者的文档。Package Schema 当前为 3，兼容读取 1、2、3。
 
 ## 校验下载
 

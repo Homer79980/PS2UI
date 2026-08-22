@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Homer79980/PS2UI-Source/blob/main/docs/distribution/releases.schema.json",
+  "title": "PS2UI public release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifestVersion", "productFamily", "packageSchema", "products"],
+  "properties": {
+    "manifestVersion": { "const": 1 },
+    "productFamily": { "const": "PS2UI" },
+    "releaseTrain": { "type": "string", "pattern": "^[0-9]{4}\\.[0-9]{2}$" },
+    "sourceRepository": { "type": "string", "format": "uri" },
+    "packageSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current", "supported"],
+      "properties": {
+        "current": { "type": "integer", "minimum": 1 },
+        "supported": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 1 },
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "kind", "version", "supportedHosts", "releaseRepository", "releaseTag", "releaseUrl", "assets"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string", "minLength": 1 },
+          "kind": { "enum": ["photoshop-exporter", "engine-adapter", "installer", "tool"] },
+          "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$" },
+          "supportedHosts": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+          "releaseRepository": { "type": "string", "pattern": "^[^/\\s]+/[^/\\s]+$" },
+          "releaseTag": { "type": "string", "minLength": 1 },
+          "releaseUrl": { "type": "string", "format": "uri" },
+          "assets": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 }
+        }
+      }
+    }
+  }
+}

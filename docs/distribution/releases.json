@@ -1,0 +1,94 @@
+{
+  "manifestVersion": 1,
+  "productFamily": "PS2UI",
+  "releaseTrain": "2026.08",
+  "packageSchema": {
+    "current": 3,
+    "supported": [1, 2, 3]
+  },
+  "sourceRepository": "https://github.com/Homer79980/PS2UI-Source",
+  "products": [
+    {
+      "id": "ps2ui",
+      "name": "PS2UI",
+      "kind": "photoshop-exporter",
+      "version": "2.1.2",
+      "supportedHosts": ["Photoshop 2023+"],
+      "releaseRepository": "Homer79980/PS2UI",
+      "releaseTag": "v2.1.2",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI-Releases/releases/tag/v2.1.2",
+      "assets": [
+        "PS2UI-Photoshop-2.1.2.ccx",
+        "PS2UI-Photoshop-Dev-2.1.2.zip",
+        "PS2UI-2.1.2-SHA256.txt"
+      ]
+    },
+    {
+      "id": "ps2unity",
+      "name": "Ps2Unity",
+      "kind": "engine-adapter",
+      "version": "2.1.1",
+      "supportedHosts": ["Unity 2022.3"],
+      "releaseRepository": "Homer79980/PS2UI",
+      "releaseTag": "v2.1.2",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.2",
+      "assets": [
+        "PS2Unity-Unity-2.1.1.unitypackage",
+        "PS2Unity-Unity-UPM-2.1.1.zip",
+        "PS2Unity-2.1.1-SHA256.txt"
+      ]
+    },
+    {
+      "id": "ps2godot",
+      "name": "Ps2Godot",
+      "kind": "engine-adapter",
+      "version": "0.1.1",
+      "supportedHosts": ["Godot 4.6.2"],
+      "releaseRepository": "Homer79980/PS2UI",
+      "releaseTag": "v2.1.2",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.2",
+      "assets": ["Ps2Godot-0.1.1.zip", "Ps2Godot-0.1.1-SHA256.txt"]
+    },
+    {
+      "id": "ps2cocos",
+      "name": "Ps2Cocos",
+      "kind": "engine-adapter",
+      "version": "0.1.1",
+      "supportedHosts": ["Cocos Creator 3.8.5-3.8.8"],
+      "releaseRepository": "Homer79980/PS2UI",
+      "releaseTag": "v2.1.2",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.2",
+      "assets": ["Ps2Cocos-0.1.1.zip", "Ps2Cocos-0.1.1-SHA256.txt"]
+    },
+    {
+      "id": "ps2unreal",
+      "name": "Ps2Unreal",
+      "kind": "engine-adapter",
+      "version": "0.1.1",
+      "supportedHosts": ["Unreal Engine 5.7 Win64", "Unreal Engine 5.8 Win64"],
+      "releaseRepository": "Homer79980/PS2UI",
+      "releaseTag": "v2.1.2",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.2",
+      "assets": [
+        "Ps2Unreal-0.1.1-UE5.7-Win64.zip",
+        "Ps2Unreal-0.1.1-UE5.8-Win64.zip",
+        "Ps2Unreal-0.1.1.zip",
+        "Ps2Unreal-0.1.1-SHA256.txt"
+      ]
+    },
+    {
+      "id": "engine-installer",
+      "name": "PS2UI Engine Installer",
+      "kind": "installer",
+      "version": "0.1.1",
+      "supportedHosts": ["Windows 10/11 x64"],
+      "releaseRepository": "Homer79980/PS2UI",
+      "releaseTag": "v2.1.2",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.2",
+      "assets": [
+        "PS2UI-Engine-Installer-0.1.1.exe",
+        "PS2UI-Engine-Installer-0.1.1-SHA256.txt"
+      ]
+    }
+  ]
+}
