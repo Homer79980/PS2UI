@@ -116,6 +116,7 @@
       "kind": "photoshop-tool",
       "version": "0.1.1",
       "supportedHosts": ["Photoshop 2022+"],
+      "description": "沿真实轮廓和颜色走势生成实心外扩像素，减少缩放、滤波和图集采样产生的边缘污染。",
       "releaseRepository": "Homer79980/pixel-color-bleed",
       "releaseTag": "v0.1.1",
       "releaseUrl": "https://github.com/Homer79980/pixel-color-bleed/releases/tag/v0.1.1",
