@@ -139,6 +139,8 @@ h1 { max-width: 620px; margin-bottom: 22px; font-size: clamp(42px, 5.2vw, 72px);
 .guide-item span:last-child { color: var(--muted); font-size: 12px; }
 
 .site-footer { display: flex; justify-content: space-between; gap: 24px; padding-top: 26px; padding-bottom: 32px; border-top: 1px solid var(--line); color: var(--quiet); font-size: 11px; }
+.site-footer a { color: var(--ink); text-decoration: none; }
+.site-footer a:hover { color: var(--teal); }
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: 42px; min-height: auto; padding-top: 58px; }
