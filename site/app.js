@@ -37,6 +37,7 @@
         '<div class="product-top"><span class="product-icon" aria-hidden="true">' + letter + '</span><span class="product-kind">' + (featured ? 'RECOMMENDED' : kind) + '</span></div>' +
         '<h3>' + escapeHtml(product.name) + '</h3>' +
         '<div class="product-host">' + escapeHtml(host) + '</div>' +
+        '<p class="product-description">' + escapeHtml(product.description || '') + '</p>' +
         '<div class="product-meta"><span class="product-version">v' + escapeHtml(product.version) + '</span><a class="product-download" href="' + assetUrl(product) + '" target="_blank" rel="noreferrer">下载文件 ↗</a></div>' +
         '</article>';
     }).join("");

@@ -115,6 +115,7 @@ h1 { max-width: 620px; margin-bottom: 22px; font-size: clamp(42px, 5.2vw, 72px);
 .product-kind { color: var(--quiet); font-size: 10px; text-align: right; }
 .product-card h3 { margin: 24px 0 6px; font-size: 20px; }
 .product-host { min-height: 42px; color: var(--muted); font-size: 12px; }
+.product-description { margin: 0; color: var(--quiet); font-size: 12px; line-height: 1.55; }
 .product-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 20px; border-top: 1px solid #303b3d; }
 .product-version { color: var(--teal); font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .product-download { color: var(--ink); font-size: 12px; font-weight: 700; }
