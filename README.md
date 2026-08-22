@@ -2,6 +2,8 @@
 
 PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成设计和九宫标记，再把同一份 Package 导入 Unity、Godot、Cocos Creator 或 Unreal Engine。这个仓库统一提供安装包、版本说明、教程和校验文件；源码仓库保持私有，以便维护共享协议和测试。
 
+在线产品中心：[PS2UI Studio](https://homer79980.github.io/PS2UI/)
+
 ## 快速开始
 
 1. 安装 Photoshop 端 [PS2UI](https://github.com/Homer79980/PS2UI/releases/latest) 插件。
@@ -14,7 +16,7 @@ PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成�
 
 | 产品 | 版本 | 支持环境 | 下载 |
 |---|---:|---|---|
-| PS2UI Photoshop 导出器 | 2.1.2 | Photoshop 2023+ | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
+| PS2UI Photoshop 导出器 | 2.1.3 | Photoshop 2023+ | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
 | Ps2Unity | 2.1.1 | Unity 2022.3 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
 | Ps2Godot | 0.1.1 | Godot 4.6.2 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
 | Ps2Cocos | 0.1.1 | Cocos Creator 3.8.5-3.8.8 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
@@ -33,10 +35,10 @@ PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成�
 
 ### Photoshop 插件
 
-1. 下载 `PS2UI-Photoshop-2.1.2.ccx`。
+1. 下载 `PS2UI-Photoshop-2.1.3.ccx`。
 2. 双击并在 Creative Cloud 确认安装。
 3. 重启 Photoshop，从“插件 -> PS2UI”打开面板。
-4. 面板左上角应显示 `v2.1.2`。
+4. 面板左上角应显示 `v2.1.3`。
 
 Photoshop 端支持 Windows/macOS 上的 Photoshop 2023（24.0）及以上版本。Photoshop 2022 及更早版本暂不支持当前 UXP 面板。
 
@@ -60,10 +62,10 @@ Unreal：项目/Plugins/Ps2Unreal
 ## 正式安装
 
 1. 安装或更新 Adobe Creative Cloud Desktop。
-2. 下载并双击 `PS2UI-Photoshop-2.1.2.ccx`。
+2. 下载并双击 `PS2UI-Photoshop-2.1.3.ccx`。
 3. 在 Creative Cloud 的安装确认窗口中完成安装。
 4. 完全退出并重新启动 Photoshop。
-5. 从 `插件 -> PS2UI` 打开面板，左上角应显示 `v2.1.2`。
+5. 从 `插件 -> PS2UI` 打开面板，左上角应显示 `v2.1.3`。
 
 当前正式包支持 Windows/macOS 上的 Photoshop 2023（24.0）及以上版本；Photoshop 2022 及更早版本不能加载这份 UXP 面板。
 
@@ -73,7 +75,7 @@ Unreal：项目/Plugins/Ps2Unreal
 
 CCX 无法安装或需要调试时：
 
-1. 解压 `PS2UI-Photoshop-Dev-2.1.2.zip`。
+1. 解压 `PS2UI-Photoshop-Dev-2.1.3.zip`。
 2. 打开 Adobe UXP Developer Tool。
 3. 点击 `Add Plugin`，选择解压目录中的 `manifest.json`。
 4. 点击 `Load` 或 `Reload`。
@@ -273,8 +275,8 @@ PS2UI 启动后会只读查询本仓库的 Latest Release。线上版本高于�
 ## 校验下载
 
 ```powershell
-Get-FileHash .\PS2UI-Photoshop-2.1.2.ccx -Algorithm SHA256
-Get-FileHash .\PS2UI-Photoshop-Dev-2.1.2.zip -Algorithm SHA256
+Get-FileHash .\PS2UI-Photoshop-2.1.3.ccx -Algorithm SHA256
+Get-FileHash .\PS2UI-Photoshop-Dev-2.1.3.zip -Algorithm SHA256
 ```
 
-输出应与 `PS2UI-2.1.2-SHA256.txt` 一致。
+输出应与 `PS2UI-2.1.3-SHA256.txt` 一致。
