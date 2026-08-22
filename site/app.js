@@ -23,12 +23,16 @@
       grid.innerHTML = '<div class="loading-state error-state">当前没有可用的公开版本清单。</div>';
       return;
     }
-    grid.innerHTML = products.map(function (product) {
+    var orderedProducts = products.slice().sort(function (left, right) {
+      return left.id === "engine-installer" ? -1 : right.id === "engine-installer" ? 1 : 0;
+    });
+    grid.innerHTML = orderedProducts.map(function (product) {
       var letter = productLetters[product.id] || "UI";
       var host = (product.supportedHosts || []).join(" · ");
       var kind = product.kind === "photoshop-exporter" ? "DESIGN TOOL" : product.kind === "installer" ? "INSTALLER" : "ENGINE ADAPTER";
-      return '<article class="product-card">' +
-        '<div class="product-top"><span class="product-icon" aria-hidden="true">' + letter + '</span><span class="product-kind">' + kind + '</span></div>' +
+      var featured = product.id === "engine-installer";
+      return '<article class="product-card' + (featured ? ' product-card-featured' : '') + '">' +
+        '<div class="product-top"><span class="product-icon" aria-hidden="true">' + letter + '</span><span class="product-kind">' + (featured ? 'RECOMMENDED' : kind) + '</span></div>' +
         '<h3>' + escapeHtml(product.name) + '</h3>' +
         '<div class="product-host">' + escapeHtml(host) + '</div>' +
         '<div class="product-meta"><span class="product-version">v' + escapeHtml(product.version) + '</span><a class="product-download" href="' + assetUrl(product) + '" target="_blank" rel="noreferrer">下载文件 ↗</a></div>' +
