@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111518" />
+    <meta name="description" content="Pixel Color Bleed Photoshop 透明边缘颜色扩展插件。" />
+    <title>Pixel Color Bleed | PS2UI Studio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="tool-page">
+    <header class="site-header">
+      <a class="wordmark" href="./" aria-label="PS2UI Studio 首页"><span class="wordmark-mark">P2</span><span>PS2UI <em>Studio</em></span></a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="./">PS2UI</a>
+        <a href="./ps-link.html">PS-Link</a>
+        <a class="current" href="./pixel-color-bleed.html">Pixel Color Bleed</a>
+        <a href="./#tutorials">教程</a>
+      </nav>
+      <a class="header-link" href="https://github.com/Homer79980/pixel-color-bleed" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="tool-page-hero section-shell">
+        <div class="tool-page-copy">
+          <p class="eyebrow">PIXEL COLOR BLEED / 0.1.1</p>
+          <h1>给透明图像补出干净的边缘颜色。</h1>
+          <p class="hero-lead">沿局部颜色结构向透明区域扩展实心像素，减少 UI、游戏图标和 Sprite 在缩放、图集或双线性采样时出现的黑边、白边和断层。</p>
+          <div class="hero-actions"><a class="button button-primary" href="https://github.com/Homer79980/pixel-color-bleed/releases/download/v0.1.1/pixel-color-bleed-0.1.1.ccx" target="_blank" rel="noreferrer">下载 Photoshop 插件 <span aria-hidden="true">↓</span></a><a class="button button-quiet" href="https://github.com/Homer79980/pixel-color-bleed" target="_blank" rel="noreferrer">查看源码 ↗</a></div>
+          <div class="hero-facts" aria-label="Pixel Color Bleed 信息"><span><strong>0.1.1</strong> 当前版本</span><span><strong>RGB</strong> 透明图层</span><span><strong>MIT</strong> 开源许可</span></div>
+        </div>
+        <div class="tool-page-visual pixel-bleed-visual"><a href="./assets/pixel-color-bleed-demo.png" target="_blank" rel="noreferrer"><img src="./assets/pixel-color-bleed-demo.png" alt="Pixel Color Bleed 透明边缘颜色扩展示意图" /></a></div>
+      </section>
+
+      <section class="section-shell tool-explanation">
+        <div><p class="eyebrow">WHY IT MATTERS</p><h2>红框区域就是最容易出问题的地方</h2></div>
+        <p>图中的红框标出透明边缘与实色像素交界处。图片在缩放、压缩或进入图集后，采样器会读取透明区域的默认颜色，边缘因此可能出现黑线、白线或颜色晕边。Pixel Color Bleed 会把局部颜色向外延展，同时保留原图层不变。</p>
+      </section>
+
+      <section class="section-shell tool-detail-grid">
+        <article class="tool-detail"><span class="guide-kicker">EXTENSION PIXELS</span><h3>扩展半径</h3><p>控制向透明区域扩展的像素数量，适合根据纹理缩放比例调整。</p></article>
+        <article class="tool-detail"><span class="guide-kicker">COLOR CONTROL</span><h3>颜色微调</h3><p>支持色相、饱和度和明度调整，只作用于生成的扩展像素。</p></article>
+        <article class="tool-detail"><span class="guide-kicker">NON-DESTRUCTIVE</span><h3>原图不变</h3><p>插件在原图层下方创建新的扩展图层，方便检查、隐藏和回退。</p></article>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell"><span>PS2UI Studio · Pixel Color Bleed</span><span><a href="./">返回 PS2UI</a> · <a href="https://github.com/Homer79980/pixel-color-bleed" target="_blank" rel="noreferrer">公开源码 ↗</a></span></footer>
+  </body>
+</html>

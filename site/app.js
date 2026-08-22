@@ -55,7 +55,9 @@
     })
     .then(function (manifest) {
       releaseLabel.textContent = "统一发布批次 " + (manifest.releaseTrain || "当前");
-      render(manifest.products);
+      render((manifest.products || []).filter(function (product) {
+        return product.kind !== "photoshop-tool";
+      }));
     })
     .catch(function () {
       grid.innerHTML = '<div class="loading-state error-state">版本清单暂时无法读取，请打开 GitHub Release 页面下载。</div>';
