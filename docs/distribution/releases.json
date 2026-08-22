@@ -89,6 +89,31 @@
         "PS2UI-Engine-Installer-0.1.1.exe",
         "PS2UI-Engine-Installer-0.1.1-SHA256.txt"
       ]
+    },
+    {
+      "id": "ps-link",
+      "name": "PS-Link",
+      "kind": "photoshop-tool",
+      "version": "0.0.1",
+      "supportedHosts": ["Photoshop · Android 7.0+"],
+      "releaseRepository": "Homer79980/PS-Link-Releases",
+      "releaseTag": "v0.0.1",
+      "releaseUrl": "https://github.com/Homer79980/PS-Link-Releases/releases/tag/v0.0.1",
+      "assets": [
+        "PS-Link-Photoshop-Plugin-0.0.1.ccx",
+        "PS-Link-Android-0.0.1.apk"
+      ]
+    },
+    {
+      "id": "pixel-color-bleed",
+      "name": "Pixel Color Bleed",
+      "kind": "photoshop-tool",
+      "version": "0.1.1",
+      "supportedHosts": ["Photoshop 2022+"],
+      "releaseRepository": "Homer79980/pixel-color-bleed",
+      "releaseTag": "v0.1.1",
+      "releaseUrl": "https://github.com/Homer79980/pixel-color-bleed/releases/tag/v0.1.1",
+      "assets": ["pixel-color-bleed-0.1.1.ccx"]
     }
   ]
 }
