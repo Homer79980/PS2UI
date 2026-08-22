@@ -6,6 +6,8 @@ PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成�
 
 公开源码、Package Schema、共享协议和测试：[PS2UI-Source](https://github.com/Homer79980/PS2UI-Source)
 
+产品路线图：[PS2UI-Source/docs/产品路线图-2026.md](https://github.com/Homer79980/PS2UI-Source/blob/main/docs/%E4%BA%A7%E5%93%81%E8%B7%AF%E7%BA%BF%E5%9B%BE-2026.md)
+
 ## 快速开始
 
 1. 安装 Photoshop 端 [PS2UI](https://github.com/Homer79980/PS2UI/releases/latest) 插件。
