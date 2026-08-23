@@ -18,9 +18,7 @@
     var assets = (product.assets || []).filter(function (asset) {
       return !/-SHA256\.txt$/i.test(asset);
     });
-    var asset = product.kind === "photoshop-exporter"
-      ? assets.find(function (name) { return /\.ccx$/i.test(name); })
-      : assets.length === 1 ? assets[0] : "";
+    var asset = assets.length === 1 ? assets[0] : "";
     if (!asset) return { url: product.releaseUrl, label: "选择安装包 ↗" };
     return {
       url: "https://github.com/" + product.releaseRepository + "/releases/download/" + encodeURIComponent(product.releaseTag) + "/" + encodeURIComponent(asset),
