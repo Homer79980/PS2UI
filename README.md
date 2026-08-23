@@ -1,6 +1,6 @@
 # PS2UI 产品中心
 
-PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成设计和九宫标记，再把同一份 Package 导入 Unity、Godot、Cocos Creator 或 Unreal Engine。这个仓库统一提供安装包、版本说明、教程和校验文件。
+PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成设计和九宫标记，再把同一份 Package 导入 Unity、Godot、Cocos Creator 或 Unreal Engine。这个仓库提供 Photoshop 安装包、产品索引和教程；整合安装器与各引擎适配器使用独立 Release，避免混放无关文件。
 
 在线产品中心：[PS2UI Studio](https://homer79980.github.io/PS2UI/)
 
@@ -21,19 +21,19 @@ PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成�
 | 产品 | 版本 | 支持环境 | 下载 |
 |---|---:|---|---|
 | PS2UI Photoshop 导出器 | 2.1.4 | Photoshop 2023+ | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
-| Ps2Unity | 2.1.1 | Unity 2022.3 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
-| Ps2Godot | 0.1.1 | Godot 4.6.2 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
-| Ps2Cocos | 0.1.1 | Cocos Creator 3.8.5-3.8.8 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
-| Ps2Unreal | 0.1.1 | Unreal Engine 5.7/5.8 Win64 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
-| PS2UI Engine Installer | 0.1.1 | Windows 10/11 x64 | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
+| Ps2Unity | 2.1.1 | Unity 2022.3 | [Release](https://github.com/Homer79980/Ps2Unity-Releases/releases/latest) |
+| Ps2Godot | 0.1.1 | Godot 4.6.2 | [Release](https://github.com/Homer79980/Ps2Godot-Releases/releases/latest) |
+| Ps2Cocos | 0.1.1 | Cocos Creator 3.8.5-3.8.8 | [Release](https://github.com/Homer79980/Ps2Cocos-Releases/releases/latest) |
+| Ps2Unreal | 0.1.1 | Unreal Engine 5.7/5.8 Win64 | [Release](https://github.com/Homer79980/Ps2Unreal-Releases/releases/latest) |
+| PS2UI Engine Installer | 0.1.1 | Windows 10/11 x64 | [Release](https://github.com/Homer79980/PS2UI-Installer-Releases/releases/latest) |
 
-> 当前整合包的公开下载和教程都在本仓库。旧的引擎 Release 仓库继续保留，用于兼容历史链接；新项目请从这里下载。
+> Windows 用户可直接使用 Engine Installer；Photoshop、手动安装和非 Windows 场景请进入对应产品的独立 Release。
 
 ## 安装方式
 
-### 推荐：统一安装器（Windows）
+### 推荐：Engine Installer（Windows）
 
-下载 `PS2UI-Engine-Installer-0.1.1.exe`，双击运行。安装器支持 Unity、Godot、Cocos Creator 和 Unreal Engine 多选，能够自动识别项目，也允许手动选择项目目录。安装前请关闭对应编辑器；安装器会备份旧插件、校验目标目录并在失败时回滚。
+从 [Engine Installer Releases](https://github.com/Homer79980/PS2UI-Installer-Releases/releases/latest) 下载 `PS2UI-Engine-Installer-0.1.1.exe`，双击运行。安装器支持 Unity、Godot、Cocos Creator 和 Unreal Engine 多选，能够自动识别项目，也允许手动选择项目目录。安装前请关闭对应编辑器；安装器会备份旧插件、校验目标目录并在失败时回滚。
 
 安装完成后，安装器会按所选引擎显示启用和首次导入步骤。安装器只安装项目级插件，不修改项目业务资源，也不会联网上传项目路径。
 
@@ -48,7 +48,7 @@ Photoshop 端支持 Windows/macOS 上的 Photoshop 2023（24.0）及以上版本
 
 ### 手动安装
 
-如果不使用安装器，可从同一个 Release 下载对应 ZIP，分别放到：
+如果不使用安装器，可从上方对应引擎的独立 Release 下载安装包，分别放到：
 
 ```text
 Unity：项目/Packages/com.psd2unity.uiimport
@@ -253,10 +253,10 @@ PS2UI 启动后会只读查询本仓库的 Latest Release。线上版本高于�
 
 | 引擎 | 安装入口 | 首次使用 |
 |---|---|---|
-| Unity | [下载整合包](https://github.com/Homer79980/PS2UI/releases/latest) | `Window -> Package Manager` 确认 Ps2Unity，然后导入 Package |
-| Godot | [下载整合包](https://github.com/Homer79980/PS2UI/releases/latest) | `Project -> Project Settings -> Plugins` 启用 Ps2Godot |
-| Cocos Creator | [下载整合包](https://github.com/Homer79980/PS2UI/releases/latest) | `Extension -> Extension Manager` 启用 Ps2Cocos |
-| Unreal Engine | [下载整合包](https://github.com/Homer79980/PS2UI/releases/latest) | `Edit -> Plugins` 启用 Ps2Unreal，重启编辑器 |
+| Unity | [Ps2Unity Release](https://github.com/Homer79980/Ps2Unity-Releases/releases/latest) | `Window -> Package Manager` 确认 Ps2Unity，然后导入 Package |
+| Godot | [Ps2Godot Release](https://github.com/Homer79980/Ps2Godot-Releases/releases/latest) | `Project -> Project Settings -> Plugins` 启用 Ps2Godot |
+| Cocos Creator | [Ps2Cocos Release](https://github.com/Homer79980/Ps2Cocos-Releases/releases/latest) | `Extension -> Extension Manager` 启用 Ps2Cocos |
+| Unreal Engine | [Ps2Unreal Release](https://github.com/Homer79980/Ps2Unreal-Releases/releases/latest) | `Edit -> Plugins` 启用 Ps2Unreal，重启编辑器 |
 
 ## 字体和资源复用
 

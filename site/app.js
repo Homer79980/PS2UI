@@ -14,10 +14,18 @@
     "pixel-color-bleed": "PB"
   };
 
-  function assetUrl(product) {
-    var asset = product.assets && product.assets[0];
-    if (!asset) return product.releaseUrl;
-    return "https://github.com/" + product.releaseRepository + "/releases/download/" + encodeURIComponent(product.releaseTag) + "/" + encodeURIComponent(asset);
+  function downloadAction(product) {
+    var assets = (product.assets || []).filter(function (asset) {
+      return !/-SHA256\.txt$/i.test(asset);
+    });
+    var asset = product.kind === "photoshop-exporter"
+      ? assets.find(function (name) { return /\.ccx$/i.test(name); })
+      : assets.length === 1 ? assets[0] : "";
+    if (!asset) return { url: product.releaseUrl, label: "选择安装包 ↗" };
+    return {
+      url: "https://github.com/" + product.releaseRepository + "/releases/download/" + encodeURIComponent(product.releaseTag) + "/" + encodeURIComponent(asset),
+      label: "直接下载 ↓"
+    };
   }
 
   function render(products) {
@@ -33,12 +41,13 @@
       var host = (product.supportedHosts || []).join(" · ");
       var kind = product.kind === "photoshop-exporter" ? "DESIGN TOOL" : product.kind === "installer" ? "INSTALLER" : product.kind === "photoshop-tool" ? "PHOTOSHOP TOOL" : "ENGINE ADAPTER";
       var featured = product.id === "engine-installer";
+      var action = downloadAction(product);
       return '<article class="product-card' + (featured ? ' product-card-featured' : '') + '">' +
         '<div class="product-top"><span class="product-icon" aria-hidden="true">' + letter + '</span><span class="product-kind">' + (featured ? 'RECOMMENDED' : kind) + '</span></div>' +
         '<h3>' + escapeHtml(product.name) + '</h3>' +
         '<div class="product-host">' + escapeHtml(host) + '</div>' +
         '<p class="product-description">' + escapeHtml(product.description || '') + '</p>' +
-        '<div class="product-meta"><span class="product-version">v' + escapeHtml(product.version) + '</span><a class="product-download" href="' + assetUrl(product) + '">直接下载 ↓</a></div>' +
+        '<div class="product-meta"><span class="product-version">v' + escapeHtml(product.version) + '</span><a class="product-download" href="' + action.url + '">' + action.label + '</a></div>' +
         '</article>';
     }).join("");
   }
@@ -55,7 +64,7 @@
       return response.json();
     })
     .then(function (manifest) {
-      releaseLabel.textContent = "统一发布批次 " + (manifest.releaseTrain || "当前");
+      releaseLabel.textContent = "当前版本批次 " + (manifest.releaseTrain || "当前");
       render((manifest.products || []).filter(function (product) {
         return product.kind !== "photoshop-tool";
       }));
