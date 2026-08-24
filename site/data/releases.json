@@ -6,7 +6,6 @@
     "current": 3,
     "supported": [1, 2, 3]
   },
-  "sourceRepository": "https://github.com/Homer79980/PS2UI-Source",
   "products": [
     {
       "id": "ps2ui",
@@ -20,7 +19,6 @@
       "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.4",
       "assets": [
         "PS2UI-Photoshop-2.1.4.ccx",
-        "PS2UI-Photoshop-Dev-2.1.4.zip",
         "PS2UI-2.1.4-SHA256.txt"
       ]
     },
@@ -77,7 +75,6 @@
       "assets": [
         "Ps2Unreal-0.1.1-UE5.7-Win64.zip",
         "Ps2Unreal-0.1.1-UE5.8-Win64.zip",
-        "Ps2Unreal-0.1.1.zip",
         "Ps2Unreal-0.1.1-SHA256.txt"
       ]
     },
@@ -119,9 +116,9 @@
       "version": "0.1.1",
       "supportedHosts": ["Photoshop 2022+"],
       "description": "沿真实轮廓和颜色走势生成实心外扩像素，减少缩放、滤波和图集采样产生的边缘污染。",
-      "releaseRepository": "Homer79980/pixel-color-bleed",
+      "releaseRepository": "Homer79980/Pixel-Color-Bleed-Releases",
       "releaseTag": "v0.1.1",
-      "releaseUrl": "https://github.com/Homer79980/pixel-color-bleed/releases/tag/v0.1.1",
+      "releaseUrl": "https://github.com/Homer79980/Pixel-Color-Bleed-Releases/releases/tag/v0.1.1",
       "assets": ["pixel-color-bleed-0.1.1.ccx"]
     }
   ]

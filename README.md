@@ -2,11 +2,7 @@
 
 PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成设计和九宫标记，再把同一份 Package 导入 Unity、Godot、Cocos Creator 或 Unreal Engine。这个仓库提供 Photoshop 安装包、产品索引和教程；整合安装器与各引擎适配器使用独立 Release，避免混放无关文件。
 
-在线产品中心：[PS2UI Studio](https://homer79980.github.io/PS2UI/)
-
-公开源码、Package Schema、共享协议和测试：[PS2UI-Source](https://github.com/Homer79980/PS2UI-Source)
-
-产品路线图：[PS2UI-Source/docs/产品路线图-2026.md](https://github.com/Homer79980/PS2UI-Source/blob/main/docs/%E4%BA%A7%E5%93%81%E8%B7%AF%E7%BA%BF%E5%9B%BE-2026.md)
+在线产品中心：[PS2UI Studio](https://homer79980.github.io/)
 
 ## 快速开始
 
@@ -74,16 +70,6 @@ Unreal：项目/Plugins/Ps2Unreal
 当前正式包支持 Windows/macOS 上的 Photoshop 2023（24.0）及以上版本；Photoshop 2022 及更早版本不能加载这份 UXP 面板。
 
 旧版 PS2Unity Photoshop 插件可以直接覆盖安装。内部插件 ID 仍为 `com.psd2unity.panel`，不会同时出现两个面板，旧 PSD 元数据和 Package Schema 继续兼容。
-
-## 开发加载
-
-CCX 无法安装或需要调试时：
-
-1. 解压 `PS2UI-Photoshop-Dev-2.1.4.zip`。
-2. 打开 Adobe UXP Developer Tool。
-3. 点击 `Add Plugin`，选择解压目录中的 `manifest.json`。
-4. 点击 `Load` 或 `Reload`。
-5. 回到 Photoshop，从 `插件 -> PS2UI` 打开面板。
 
 ## 九宫完整教程
 
@@ -246,8 +232,7 @@ PS2UI 启动后会只读查询本仓库的 Latest Release。线上版本高于�
 ## 升级与卸载
 
 - 升级：直接安装新版 CCX 后重启 Photoshop。
-- 开发版升级：在 UXP Developer Tool 中重新选择新版目录并点击 `Reload`。
-- 卸载：在 Creative Cloud Desktop 的插件管理中卸载 PS2UI；开发加载则在 UXP Developer Tool 中 `Unload` 并移除条目。
+- 卸载：在 Creative Cloud Desktop 的插件管理中卸载 PS2UI。
 
 ## 引擎插件
 
@@ -272,15 +257,14 @@ PS2UI 启动后会只读查询本仓库的 Latest Release。线上版本高于�
 - 字体不一致：在引擎插件的字体管理入口绑定项目字体后重新导入；默认字体只能保证结构参数，不保证字形宽度完全相同。
 - 安装器提示已安装：先关闭对应编辑器，再选择“修复”；安装器不会覆盖项目自定义的旧版插件。
 
-## 源码和协议
+## Package 兼容性
 
-共享源码、Package Schema、字体协议和跨引擎测试维护在私有仓库 [PS2UI-Source](https://github.com/Homer79980/PS2UI-Source)。公开仓库只提供可安装产物和面向使用者的文档。Package Schema 当前为 3，兼容读取 1、2、3。
+Package Schema 当前为 3，四个引擎适配器兼容读取 1、2、3。
 
 ## 校验下载
 
 ```powershell
 Get-FileHash .\PS2UI-Photoshop-2.1.4.ccx -Algorithm SHA256
-Get-FileHash .\PS2UI-Photoshop-Dev-2.1.4.zip -Algorithm SHA256
 ```
 
 输出应与 `PS2UI-2.1.4-SHA256.txt` 一致。
