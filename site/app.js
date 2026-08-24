@@ -64,7 +64,7 @@
     .then(function (manifest) {
       releaseLabel.textContent = "当前版本批次 " + (manifest.releaseTrain || "当前");
       render((manifest.products || []).filter(function (product) {
-        return product.kind !== "photoshop-tool";
+        return ["photoshop-exporter", "engine-adapter", "installer"].indexOf(product.kind) !== -1;
       }));
     })
     .catch(function () {

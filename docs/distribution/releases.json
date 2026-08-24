@@ -120,6 +120,21 @@
       "releaseTag": "v0.1.1",
       "releaseUrl": "https://github.com/Homer79980/Pixel-Color-Bleed-Releases/releases/tag/v0.1.1",
       "assets": ["pixel-color-bleed-0.1.1.ccx"]
+    },
+    {
+      "id": "ai-rename-pro-studio",
+      "name": "AI Rename Pro Studio",
+      "kind": "tool",
+      "version": "2.0.5",
+      "supportedHosts": ["Windows"],
+      "description": "批量整理图片与 PSD/PSB 素材，支持规则命名、AI 智能命名、格式转换和画布处理。",
+      "releaseRepository": "LeoWalker023/AI-Rename-Pro-Studio-Releases",
+      "releaseTag": "v2.0.5",
+      "releaseUrl": "https://github.com/LeoWalker023/AI-Rename-Pro-Studio-Releases/releases/tag/v2.0.5",
+      "assets": [
+        "AI-Rename-Pro-Studio-2.0.5.exe",
+        "AI-Rename-Pro-Studio-2.0.5.exe.sha256"
+      ]
     }
   ]
 }
