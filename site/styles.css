@@ -157,7 +157,6 @@ h1 { max-width: 620px; margin-bottom: 22px; font-size: clamp(42px, 5.2vw, 72px);
 .panel-shot figcaption span:last-child { color: var(--muted); font-size: 12px; }
 .guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .guide-item { display: flex; flex-direction: column; min-height: 180px; padding: 22px; border: 1px solid var(--line); border-radius: 9px; background: #161c1e; }
-.guide-item:hover { border-color: #50706e; background: var(--surface); }
 .guide-kicker { color: var(--amber); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
 .guide-item strong { margin: 24px 0 7px; font-size: 17px; }
 .guide-item span:last-child { color: var(--muted); font-size: 12px; }
