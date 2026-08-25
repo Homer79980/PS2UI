@@ -56,7 +56,7 @@
     });
   }
 
-  fetch("./data/releases.json?v=2.1.4", { cache: "no-store" })
+  fetch("./data/releases.json?v=3.0.0-installer-0.1.2", { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("release manifest unavailable");
       return response.json();

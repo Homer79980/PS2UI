@@ -26,16 +26,16 @@
       "id": "ps2unity",
       "name": "Ps2Unity",
       "kind": "engine-adapter",
-      "version": "2.1.1",
+      "version": "3.0.0",
       "supportedHosts": ["Unity 2022.3"],
-      "description": "把 PS2UI Package 导入 Unity，复用 Sprite、九宫和项目资源。",
+      "description": "把 PS2UI Package 导入 Unity，生成使用 Unity UI 与 TextMesh Pro 的可编辑 Prefab；插件只在 Editor 工作，卸载后生成界面仍可运行。",
       "releaseRepository": "Homer79980/Ps2Unity-Releases",
-      "releaseTag": "v2.1.1",
-      "releaseUrl": "https://github.com/Homer79980/Ps2Unity-Releases/releases/tag/v2.1.1",
+      "releaseTag": "v3.0.0",
+      "releaseUrl": "https://github.com/Homer79980/Ps2Unity-Releases/releases/tag/v3.0.0",
       "assets": [
-        "PS2Unity-Unity-2.1.1.unitypackage",
-        "PS2Unity-Unity-UPM-2.1.1.zip",
-        "PS2Unity-2.1.1-SHA256.txt"
+        "PS2Unity-Unity-3.0.0.unitypackage",
+        "PS2Unity-Unity-UPM-3.0.0.zip",
+        "PS2Unity-3.0.0-SHA256.txt"
       ]
     },
     {
@@ -82,15 +82,15 @@
       "id": "engine-installer",
       "name": "PS2UI Engine Installer",
       "kind": "installer",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "supportedHosts": ["Windows 10/11 x64"],
       "description": "自动安装、更新、修复和卸载四个引擎的项目插件。",
       "releaseRepository": "Homer79980/PS2UI-Installer-Releases",
-      "releaseTag": "v0.1.1",
-      "releaseUrl": "https://github.com/Homer79980/PS2UI-Installer-Releases/releases/tag/v0.1.1",
+      "releaseTag": "v0.1.2",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI-Installer-Releases/releases/tag/v0.1.2",
       "assets": [
-        "PS2UI-Engine-Installer-0.1.1.exe",
-        "PS2UI-Engine-Installer-0.1.1-SHA256.txt"
+        "PS2UI-Engine-Installer-0.1.2.exe",
+        "PS2UI-Engine-Installer-0.1.2-SHA256.txt"
       ]
     },
     {
