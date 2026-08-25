@@ -3,52 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#111518" />
-    <meta name="description" content="Pixel Color Bleed 为透明图层沿真实轮廓和颜色走势生成实心外扩像素，减少缩放、滤波和图集采样时的边缘污染。" />
-    <title>Pixel Color Bleed | PS2UI Studio</title>
+    <meta http-equiv="refresh" content="0; url=https://homer79980.github.io/pixel-color-bleed.html" />
     <link rel="canonical" href="https://homer79980.github.io/pixel-color-bleed.html" />
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Pixel Color Bleed | PS2UI Studio</title>
   </head>
-  <body class="tool-page">
-    <header class="site-header">
-      <a class="wordmark" href="https://homer79980.github.io/" aria-label="PS2UI Studio 产品主页"><span class="wordmark-mark">P2</span><span>PS2UI <em>Studio</em></span></a>
-      <nav class="site-nav" aria-label="主导航">
-        <a href="https://homer79980.github.io/">首页</a>
-        <a href="./">PS2UI</a>
-        <a href="https://homer79980.github.io/ps-link.html">PS-Link</a>
-        <a class="current" href="https://homer79980.github.io/pixel-color-bleed.html">Pixel Color Bleed</a>
-        <a href="https://homer79980.github.io/ps-slicer.html">PS 切图工具</a>
-        <a href="https://homer79980.github.io/ai-rename.html">AI Rename</a>
-        <a href="https://leowalker023.github.io/lnspiration/" target="_blank" rel="noreferrer">探索更多</a>
-      </nav>
-      <a class="header-link" href="https://github.com/Homer79980/Pixel-Color-Bleed-Releases/releases/latest" target="_blank" rel="noreferrer">下载 <span aria-hidden="true">↓</span></a>
-    </header>
-
-    <main id="top">
-      <section class="tool-page-hero section-shell">
-        <div class="tool-page-copy">
-          <p class="eyebrow">PIXEL COLOR BLEED / 0.1.1</p>
-          <h1>沿真实轮廓延伸实心像素。</h1>
-          <p class="hero-lead">Pixel Color Bleed 读取图层的 RGBA 结构，只向外部透明区域生成一圈不透明像素，并沿轮廓、曲线和颜色走势逐层外推。它不是内容识别填充，也不是把最外圈颜色简单复制到四周。</p>
-          <div class="hero-actions"><a class="button button-primary" href="https://github.com/Homer79980/Pixel-Color-Bleed-Releases/releases/download/v0.1.1/pixel-color-bleed-0.1.1.ccx">直接下载 Photoshop 插件 <span aria-hidden="true">↓</span></a><a class="button button-quiet" href="https://github.com/Homer79980/Pixel-Color-Bleed-Releases/releases/latest" target="_blank" rel="noreferrer">查看版本 ↗</a></div>
-          <div class="hero-facts" aria-label="Pixel Color Bleed 信息"><span><strong>0.1.1</strong> 当前版本</span><span><strong>RGBA</strong> 透明图层</span><span><strong>NON-DESTRUCTIVE</strong> 原图不变</span></div>
-        </div>
-        <div class="tool-page-visual pixel-bleed-visual"><a href="./assets/pixel-color-bleed-demo.png" target="_blank" rel="noreferrer"><img src="./assets/pixel-color-bleed-demo.png" alt="Pixel Color Bleed 透明边缘颜色扩展示意图" /></a></div>
-      </section>
-
-      <section class="section-shell tool-explanation">
-        <div><p class="eyebrow">WHY IT MATTERS</p><h2>把采样器会读到的透明边缘，变成可靠的实色像素。</h2></div>
-        <p>透明 PNG 在缩放、滤波、旋转或进入图集后，采样器可能读到边缘外的黑色、灰色或默认透明色，于是出现黑边、白边和脏色。插件会先区分主体、半透明边缘和外部透明空间，只处理与画布外相连的透明区域；主体内部的透明孔洞不会被填掉。</p>
-      </section>
-
-      <section class="section-shell tool-detail-grid">
-        <article class="tool-detail"><span class="guide-kicker">01 / CONTOUR</span><h3>先找可靠轮廓</h3><p>读取 RGBA 像素，过滤不可靠的低透明度边缘；必要时参考主体内部颜色，避免把黑边、灰边和脏色继续扩散。</p></article>
-        <article class="tool-detail"><span class="guide-kicker">02 / OUTER SPACE</span><h3>只填外部透明区</h3><p>只处理与画布外相连的透明空间，主体包围的透明孔洞和内部结构保持原样。</p></article>
-        <article class="tool-detail"><span class="guide-kicker">03 / LAYERED GROWTH</span><h3>沿走势逐层外推</h3><p>综合外法线、轮廓曲线和邻近颜色方向，一层一层生成；颜色带、弧线和局部结构会继续向外延伸，而不是放射状复制。</p></article>
-        <article class="tool-detail"><span class="guide-kicker">04 / OUTPUT</span><h3>实心、可回退</h3><p>生成像素会融合并固定为 100% 不透明，向主体内重叠少量像素以减少缝隙；原图不改，扩散结果放在下方新图层。色相、饱和度和明度只作用于新像素。</p></article>
-      </section>
-    </main>
-
-    <footer class="site-footer section-shell"><span>PS2UI Studio · Pixel Color Bleed · 开发者：郝利苗 · QQ：465852139</span><span><a href="https://homer79980.github.io/">返回产品主页</a> · <a href="https://github.com/Homer79980/Pixel-Color-Bleed-Releases/releases/latest" target="_blank" rel="noreferrer">下载与版本 ↗</a></span></footer>
+  <body>
+    <p>页面已迁移至 <a href="https://homer79980.github.io/pixel-color-bleed.html">Pixel Color Bleed 产品页</a>。</p>
   </body>
 </html>
