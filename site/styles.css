@@ -51,7 +51,7 @@ a { color: inherit; text-decoration: none; }
 .site-nav { display: flex; gap: 28px; color: var(--muted); font-size: 13px; }
 .site-nav a:hover, .header-link:hover, .text-link:hover { color: var(--teal); }
 .site-nav a.current { color: var(--ink); }
-.header-link { color: var(--muted); font-size: 12px; }
+.header-link { flex: 0 0 auto; color: var(--muted); font-size: 12px; white-space: nowrap; }
 
 .hero { display: grid; grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr); align-items: center; gap: 76px; min-height: 620px; padding-top: 68px; padding-bottom: 76px; }
 .eyebrow { margin: 0 0 16px; color: var(--teal); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
