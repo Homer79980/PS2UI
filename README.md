@@ -16,7 +16,7 @@ PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成�
 
 | 产品 | 版本 | 支持环境 | 下载 |
 |---|---:|---|---|
-| PS2UI Photoshop 导出器 | 2.1.6 | Photoshop 2023+ | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
+| PS2UI Photoshop 导出器 | 2.1.7 | Photoshop 2023+ | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
 | Ps2Unity | 3.0.0 | Unity 2022.3 | [Release](https://github.com/Homer79980/Ps2Unity-Releases/releases/latest) |
 | Ps2Godot | 0.1.1 | Godot 4.6.2 | [Release](https://github.com/Homer79980/Ps2Godot-Releases/releases/latest) |
 | Ps2Cocos | 0.1.1 | Cocos Creator 3.8.5-3.8.8 | [Release](https://github.com/Homer79980/Ps2Cocos-Releases/releases/latest) |
