@@ -16,7 +16,7 @@ PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成�
 
 | 产品 | 版本 | 支持环境 | 下载 |
 |---|---:|---|---|
-| PS2UI Photoshop 导出器 | 2.1.5 | Photoshop 2023+ | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
+| PS2UI Photoshop 导出器 | 2.1.6 | Photoshop 2023+ | [Release](https://github.com/Homer79980/PS2UI/releases/latest) |
 | Ps2Unity | 3.0.0 | Unity 2022.3 | [Release](https://github.com/Homer79980/Ps2Unity-Releases/releases/latest) |
 | Ps2Godot | 0.1.1 | Godot 4.6.2 | [Release](https://github.com/Homer79980/Ps2Godot-Releases/releases/latest) |
 | Ps2Cocos | 0.1.1 | Cocos Creator 3.8.5-3.8.8 | [Release](https://github.com/Homer79980/Ps2Cocos-Releases/releases/latest) |
@@ -35,7 +35,7 @@ PS2UI 是一套面向游戏 UI 的跨引擎工具链：在 Photoshop 中完成�
 
 ### Photoshop 插件
 
-1. 下载 `PS2UI-Photoshop-2.1.5.ccx`。
+1. 下载 `PS2UI-Photoshop-2.1.6.ccx`。
 2. 双击并在 Creative Cloud 确认安装。
 3. 重启 Photoshop，从“插件 -> PS2UI”打开面板。
 4. 面板左上角应显示 `v2.1.5`。
@@ -62,7 +62,7 @@ Unreal：项目/Plugins/Ps2Unreal
 ## 正式安装
 
 1. 安装或更新 Adobe Creative Cloud Desktop。
-2. 下载并双击 `PS2UI-Photoshop-2.1.5.ccx`。
+2. 下载并双击 `PS2UI-Photoshop-2.1.6.ccx`。
 3. 在 Creative Cloud 的安装确认窗口中完成安装。
 4. 完全退出并重新启动 Photoshop。
 5. 从 `插件 -> PS2UI` 打开面板，左上角应显示 `v2.1.5`。
@@ -264,7 +264,7 @@ Package Schema 当前为 3，四个引擎适配器兼容读取 1、2、3。
 ## 校验下载
 
 ```powershell
-Get-FileHash .\PS2UI-Photoshop-2.1.5.ccx -Algorithm SHA256
+Get-FileHash .\PS2UI-Photoshop-2.1.6.ccx -Algorithm SHA256
 ```
 
 输出应与 Release 中提供的 `PS2UI-2.1.5-SHA256.txt` 一致。
