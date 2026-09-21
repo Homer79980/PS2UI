@@ -11,15 +11,15 @@
       "id": "ps2ui",
       "name": "PS2UI",
       "kind": "photoshop-exporter",
-      "version": "2.1.15",
+      "version": "2.1.16",
       "supportedHosts": ["Photoshop 2023+"],
-      "description": "导出统一 Package，处理九宫、AI 命名和跨引擎 UI 资源。v2.1.15 修复导出启动错误，统一面板样式，改进大文件导出与取消。",
+      "description": "导出统一 Package，处理九宫、AI 命名和跨引擎 UI 资源。v2.1.16 修复 AI 命名分类切换，并支持无类型命名。",
       "releaseRepository": "Homer79980/PS2UI",
-      "releaseTag": "v2.1.15",
-      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.15",
+      "releaseTag": "v2.1.16",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.16",
       "assets": [
-        "PS2UI-Photoshop-2.1.15.ccx",
-        "PS2UI-2.1.15-SHA256.txt"
+        "PS2UI-Photoshop-2.1.16.ccx",
+        "PS2UI-2.1.16-SHA256.txt"
       ]
     },
     {

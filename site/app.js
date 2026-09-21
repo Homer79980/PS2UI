@@ -56,7 +56,7 @@
     });
   }
 
-  fetch("./data/releases.json?v=ps2ui-2.1.15", { cache: "no-store" })
+  fetch("./data/releases.json?v=ps2ui-2.1.16", { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("release manifest unavailable");
       return response.json();
