@@ -120,6 +120,41 @@
       "releaseTag": "v0.1.1",
       "releaseUrl": "https://github.com/Homer79980/Pixel-Color-Bleed-Releases/releases/tag/v0.1.1",
       "assets": ["pixel-color-bleed-0.1.1.ccx"]
+    },
+    {
+      "id": "ps-offline-mask",
+      "name": "离线抠图",
+      "kind": "photoshop-tool",
+      "version": "0.1.0",
+      "supportedHosts": [
+        "Photoshop 25.0+"
+      ],
+      "description": "本地优先移除纯色与近纯色背景，处理内部孔洞、软 Alpha 和边缘残色。",
+      "releaseRepository": "Homer79980/ps-offline-mask-releases",
+      "releaseTag": "v0.1.0",
+      "releaseUrl": "https://github.com/Homer79980/ps-offline-mask-releases/releases/tag/v0.1.0",
+      "assets": [
+        "ps-offline-mask-0.1.0.ccx",
+        "SHA256SUMS.txt"
+      ]
+    },
+    {
+      "id": "quick-export",
+      "name": "快速导出",
+      "kind": "photoshop-tool",
+      "version": "1.0.2",
+      "supportedHosts": [
+        "Photoshop 23.3+"
+      ],
+      "description": "选择一次路径和格式，快速把 Photoshop 当前可见画面导出为 PNG 或 JPEG。",
+      "releaseRepository": "Homer79980/quick-export-releases",
+      "releaseTag": "v1.0.2",
+      "releaseUrl": "https://github.com/Homer79980/quick-export-releases/releases/tag/v1.0.2",
+      "assets": [
+        "quick-export-1.0.2.ccx",
+        "quick-export-1.0.2-source.zip",
+        "SHA256SUMS.txt"
+      ]
     }
   ]
 }
