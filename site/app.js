@@ -12,8 +12,6 @@
     "engine-installer": "EX",
     "ps-link": "PL",
     "pixel-color-bleed": "PB",
-    "ps-offline-mask": "OM",
-    "quick-export": "QE"
   };
 
   function downloadAction(product) {
@@ -66,7 +64,7 @@
     .then(function (manifest) {
       releaseLabel.textContent = "当前版本批次 " + (manifest.releaseTrain || "当前");
       render((manifest.products || []).filter(function (product) {
-        return ["photoshop-exporter", "engine-adapter", "installer", "photoshop-tool"].indexOf(product.kind) !== -1;
+        return ["photoshop-exporter", "engine-adapter", "installer"].indexOf(product.kind) !== -1;
       }));
     })
     .catch(function () {
