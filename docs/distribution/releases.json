@@ -1,96 +1,119 @@
 {
   "manifestVersion": 1,
   "productFamily": "PS2UI",
-  "releaseTrain": "2026.09",
+  "releaseTrain": "2026.10",
   "packageSchema": {
     "current": 3,
-    "supported": [1, 2, 3]
+    "supported": [
+      1,
+      2,
+      3
+    ]
   },
   "products": [
     {
       "id": "ps2ui",
       "name": "PS2UI",
       "kind": "photoshop-exporter",
-      "version": "2.1.17",
-      "supportedHosts": ["Photoshop 2023+"],
-      "description": "导出统一 Package，处理九宫、AI 命名和跨引擎 UI 资源。v2.1.17 修复九宫取样、预览资源释放、AI 像素识别和文字读取异常。",
+      "version": "2.1.19",
+      "supportedHosts": [
+        "Photoshop 2023+"
+      ],
+      "description": "Photoshop 导出统一 Package；改进 AI 命名上下文、视觉预览与待复核处理，支持明确统一 Img 分类。",
       "releaseRepository": "Homer79980/PS2UI",
-      "releaseTag": "v2.1.17",
-      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.17",
+      "releaseTag": "v2.1.19",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.19",
       "assets": [
-        "PS2UI-Photoshop-2.1.17.ccx",
-        "PS2UI-2.1.17-SHA256.txt"
+        "PS2UI-Photoshop-2.1.19.ccx",
+        "PS2UI-2.1.19-SHA256.txt"
       ]
     },
     {
       "id": "ps2unity",
       "name": "Ps2Unity",
       "kind": "engine-adapter",
-      "version": "3.0.0",
-      "supportedHosts": ["Unity 2022.3"],
-      "description": "把 PS2UI Package 导入 Unity，生成使用 Unity UI 与 TextMesh Pro 的可编辑 Prefab；插件只在 Editor 工作，卸载后生成界面仍可运行。",
+      "version": "3.2.5",
+      "supportedHosts": [
+        "Unity 2022.3"
+      ],
+      "description": "生成 Unity UI Prefab 和 2D 场景 Prefab；严格图片复用，恢复原字体流程，同名画板自动区分输出。",
       "releaseRepository": "Homer79980/Ps2Unity-Releases",
-      "releaseTag": "v3.0.0",
-      "releaseUrl": "https://github.com/Homer79980/Ps2Unity-Releases/releases/tag/v3.0.0",
+      "releaseTag": "v3.2.5",
+      "releaseUrl": "https://github.com/Homer79980/Ps2Unity-Releases/releases/tag/v3.2.5",
       "assets": [
-        "PS2Unity-Unity-3.0.0.unitypackage",
-        "PS2Unity-Unity-UPM-3.0.0.zip",
-        "PS2Unity-3.0.0-SHA256.txt"
+        "PS2Unity-Unity-3.2.5.unitypackage",
+        "PS2Unity-Unity-UPM-3.2.5.zip",
+        "PS2Unity-3.2.5-SHA256.txt"
       ]
     },
     {
       "id": "ps2godot",
       "name": "Ps2Godot",
       "kind": "engine-adapter",
-      "version": "0.1.1",
-      "supportedHosts": ["Godot 4.6.2"],
-      "description": "生成 Godot 场景，支持 TextureRect、NinePatchRect 和字体映射。",
+      "version": "0.1.2",
+      "supportedHosts": [
+        "Godot 4.6.2"
+      ],
+      "description": "生成可编辑 Godot Control 场景；同名画板稳定输出，修复图片内容变化后的过期缓存。",
       "releaseRepository": "Homer79980/Ps2Godot-Releases",
-      "releaseTag": "v0.1.1",
-      "releaseUrl": "https://github.com/Homer79980/Ps2Godot-Releases/releases/tag/v0.1.1",
-      "assets": ["Ps2Godot-0.1.1.zip", "Ps2Godot-0.1.1-SHA256.txt"]
+      "releaseTag": "v0.1.2",
+      "releaseUrl": "https://github.com/Homer79980/Ps2Godot-Releases/releases/tag/v0.1.2",
+      "assets": [
+        "Ps2Godot-0.1.2.zip",
+        "Ps2Godot-0.1.2-SHA256.txt"
+      ]
     },
     {
       "id": "ps2cocos",
       "name": "Ps2Cocos",
       "kind": "engine-adapter",
-      "version": "0.1.1",
-      "supportedHosts": ["Cocos Creator 3.8.5-3.8.8"],
-      "description": "生成可编辑 Prefab，支持 Sprite、九宫切片和资源复用。",
+      "version": "0.1.2",
+      "supportedHosts": [
+        "Cocos Creator 3.8.5-3.8.8"
+      ],
+      "description": "生成可编辑 Cocos UI Prefab；修复同名画板覆盖和过期图片缓存，保留原字体映射流程。",
       "releaseRepository": "Homer79980/Ps2Cocos-Releases",
-      "releaseTag": "v0.1.1",
-      "releaseUrl": "https://github.com/Homer79980/Ps2Cocos-Releases/releases/tag/v0.1.1",
-      "assets": ["Ps2Cocos-0.1.1.zip", "Ps2Cocos-0.1.1-SHA256.txt"]
+      "releaseTag": "v0.1.2",
+      "releaseUrl": "https://github.com/Homer79980/Ps2Cocos-Releases/releases/tag/v0.1.2",
+      "assets": [
+        "Ps2Cocos-0.1.2.zip",
+        "Ps2Cocos-0.1.2-SHA256.txt"
+      ]
     },
     {
       "id": "ps2unreal",
       "name": "Ps2Unreal",
       "kind": "engine-adapter",
-      "version": "0.1.1",
-      "supportedHosts": ["Unreal Engine 5.7 Win64", "Unreal Engine 5.8 Win64"],
-      "description": "生成 UMG Widget，复用 Texture2D 并保留九宫和文字布局。",
+      "version": "0.1.2",
+      "supportedHosts": [
+        "Unreal Engine 5.7 Win64",
+        "Unreal Engine 5.8 Win64"
+      ],
+      "description": "UE 5.8 提供 0.1.2 同名画板修复版；UE 5.7 继续提供 0.1.1 正式兼容包。",
       "releaseRepository": "Homer79980/Ps2Unreal-Releases",
-      "releaseTag": "v0.1.1",
-      "releaseUrl": "https://github.com/Homer79980/Ps2Unreal-Releases/releases/tag/v0.1.1",
+      "releaseTag": "v0.1.2",
+      "releaseUrl": "https://github.com/Homer79980/Ps2Unreal-Releases/releases/tag/v0.1.2",
       "assets": [
         "Ps2Unreal-0.1.1-UE5.7-Win64.zip",
-        "Ps2Unreal-0.1.1-UE5.8-Win64.zip",
-        "Ps2Unreal-0.1.1-SHA256.txt"
+        "Ps2Unreal-0.1.2-UE5.8-Win64.zip",
+        "Ps2Unreal-0.1.2-SHA256.txt"
       ]
     },
     {
       "id": "engine-installer",
       "name": "PS2UI Engine Installer",
       "kind": "installer",
-      "version": "0.1.2",
-      "supportedHosts": ["Windows 10/11 x64"],
-      "description": "自动安装、更新、修复和卸载四个引擎的项目插件。",
+      "version": "0.1.3",
+      "supportedHosts": [
+        "Windows 10/11 x64"
+      ],
+      "description": "离线安装四引擎插件；托管旧版先备份再升级，同版与较新版保持不变。UE 5.7 使用 0.1.1 兼容包。",
       "releaseRepository": "Homer79980/PS2UI-Installer-Releases",
-      "releaseTag": "v0.1.2",
-      "releaseUrl": "https://github.com/Homer79980/PS2UI-Installer-Releases/releases/tag/v0.1.2",
+      "releaseTag": "v0.1.3",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI-Installer-Releases/releases/tag/v0.1.3",
       "assets": [
-        "PS2UI-Engine-Installer-0.1.2.exe",
-        "PS2UI-Engine-Installer-0.1.2-SHA256.txt"
+        "PS2UI-Engine-Installer-0.1.3.exe",
+        "PS2UI-Engine-Installer-0.1.3-SHA256.txt"
       ]
     },
     {
@@ -98,7 +121,9 @@
       "name": "PS-Link",
       "kind": "photoshop-tool",
       "version": "0.1.0",
-      "supportedHosts": ["Windows 10/11 · Photoshop 2023+ · Android 7.0+"],
+      "supportedHosts": [
+        "Windows 10/11 · Photoshop 2023+ · Android 7.0+"
+      ],
       "description": "把 Photoshop 当前画板通过局域网同步到 Android 手机，支持多画板跟随、保存同步和自动预览。",
       "releaseRepository": "Homer79980/PS-Link-Releases",
       "releaseTag": "v0.1.0",
@@ -114,12 +139,16 @@
       "name": "Pixel Color Bleed",
       "kind": "photoshop-tool",
       "version": "0.1.1",
-      "supportedHosts": ["Photoshop 2022+"],
+      "supportedHosts": [
+        "Photoshop 2022+"
+      ],
       "description": "顺着原图的颜色走势与轮廓方向向周围生成新像素，让色带、曲线和局部结构自然延续。",
       "releaseRepository": "Homer79980/Pixel-Color-Bleed-Releases",
       "releaseTag": "v0.1.1",
       "releaseUrl": "https://github.com/Homer79980/Pixel-Color-Bleed-Releases/releases/tag/v0.1.1",
-      "assets": ["pixel-color-bleed-0.1.1.ccx"]
+      "assets": [
+        "pixel-color-bleed-0.1.1.ccx"
+      ]
     },
     {
       "id": "ps-offline-mask",
