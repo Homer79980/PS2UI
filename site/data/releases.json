@@ -15,17 +15,17 @@
       "id": "ps2ui",
       "name": "PS2UI",
       "kind": "photoshop-exporter",
-      "version": "2.1.19",
+      "version": "2.1.20",
       "supportedHosts": [
         "Photoshop 2023+"
       ],
-      "description": "Photoshop 导出统一 Package；改进 AI 命名上下文、视觉预览与待复核处理，支持明确统一 Img 分类。",
+      "description": "Photoshop 导出统一 Package；AI 优先按可见物体命名，增加跨文档取图、透明预览和批量结果 ID 保护。",
       "releaseRepository": "Homer79980/PS2UI",
-      "releaseTag": "v2.1.19",
-      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.19",
+      "releaseTag": "v2.1.20",
+      "releaseUrl": "https://github.com/Homer79980/PS2UI/releases/tag/v2.1.20",
       "assets": [
-        "PS2UI-Photoshop-2.1.19.ccx",
-        "PS2UI-2.1.19-SHA256.txt"
+        "PS2UI-Photoshop-2.1.20.ccx",
+        "PS2UI-2.1.20-SHA256.txt"
       ]
     },
     {
